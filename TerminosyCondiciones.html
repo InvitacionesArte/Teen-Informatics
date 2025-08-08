@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teen Informatics - Términos y Condiciones</title>
+    <!-- Bootstrap 5.3 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- AOS Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@700;800&display=swap" rel="stylesheet">
+     <!-- Bloquear traducción automática en Chrome/Edge -->
+    <meta name="google" content="notranslate">
+    <!-- Evitar que Firefox y otros navegadores traduzcan -->
+    <meta name="robots" content="notranslate">
+    <!-- Definir el idioma de la página (opcional, pero útil) -->
+    <meta http-equiv="Content-Language" content="es">
+    <!-- También puedes usar esto para Safari y otros navegadores -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <style>
+        :root {
+            --primary: #2563eb;
+            --primary-dark: #1e40af;
+            --primary-2: #d62828;
+            --primary-3: #b41f1f;
+            --dark: #0f172a;
+            --light: #f8fafc;
+            --gray: #64748b;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: var(--dark);
+            overflow-x: hidden;
+            padding-top: 80px;
+            background-color: #f8f9fa;
+        }
+        
+        h1, h2, h3, h4, h5 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+        }
+        
+        /* Navbar */
+        .navbar {
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            padding: 15px 0;
+            transition: all 0.3s;
+        }
+        
+        .navbar-brand {
+            font-weight: 800;
+            color: var(--primary);
+            font-size: 1.8rem;
+        }
+        
+        .nav-link {
+            font-weight: 500;
+            margin: 0 10px;
+            color: var(--dark);
+            position: relative;
+        }
+        
+        .nav-link:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary);
+            transition: width 0.3s;
+        }
+        
+        .nav-link:hover:after,
+        .nav-link.active:after {
+            width: 100%;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary-2), var(--primary-3));
+            border: none;
+            padding: 10px 25px;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(37, 99, 235, 0.4);
+        }
+        
+        /* Header con imagen de fondo */
+        .terms-header {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://picsum.photos/1920/600?contract');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 120px 0 80px;
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .terms-header h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+        }
+        
+        /* Contenido de términos */
+        .terms-content {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            padding: 40px;
+            margin-bottom: 60px;
+        }
+        
+        .terms-section {
+            margin-bottom: 40px;
+        }
+        
+        .terms-section h2 {
+            color: var(--primary);
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .terms-section h2:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background: var(--primary);
+        }
+        
+        .terms-section h3 {
+            color: var(--dark);
+            margin: 25px 0 15px;
+            font-size: 1.3rem;
+        }
+        
+        .terms-section p, .terms-section ul {
+            color: var(--gray);
+            line-height: 1.8;
+            margin-bottom: 15px;
+        }
+        
+        .terms-section ul {
+            padding-left: 20px;
+        }
+        
+        .terms-section li {
+            margin-bottom: 10px;
+        }
+          /* Footer */
+        footer {
+            background: var(--dark);
+            color: white;
+            padding: 80px 0 30px;
+        }
+        
+        .footer-title {
+            position: relative;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+        }
+        
+        .footer-title:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background: var(--primary);
+        }
+        
+        .footer-links li {
+            margin-bottom: 10px;
+            list-style: none;
+        }
+        
+        .footer-links a {
+            color: #94a3b8;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+        
+        .footer-links a:hover {
+            color: white;
+            padding-left: 5px;
+        }
+        
+        .social-links a {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            text-align: center;
+            line-height: 40px;
+            margin-right: 10px;
+            color: white;
+            transition: all 0.3s;
+        }
+        
+        .social-links a:hover {
+            background: var(--primary);
+            transform: translateY(-5px);
+        }      
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            body {
+                padding-top: 70px;
+            }
+            
+            .terms-header {
+                padding: 80px 0 50px;
+            }
+            
+            .terms-header h1 {
+                font-size: 2.5rem;
+            }
+            
+            .terms-content {
+                padding: 25px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">Teen Informatics</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="servicios.html">Servicios</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="tutoriales.html">Tutoriales</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="nosotros.html">Nosotros</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contacto.html">Contacto</a>
+                    </li>
+                </ul>
+                <div class="ms-lg-3 mt-3 mt-lg-0">
+                    <a href="https://www.youtube.com/@TeenInformatics-j7c" target="_blank" class="btn btn-primary">Canal de Youtube</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <header class="terms-header">
+        <div class="container">
+            <h1 data-aos="fade-down">Términos y Condiciones</h1>
+            <p class="lead" data-aos="fade-up" data-aos-delay="200">Última actualización: 15 de junio, 2023</p>
+        </div>
+    </header>
+
+    <!-- Contenido -->
+    <section class="py-5">
+        <div class="container">
+            <div class="terms-content" data-aos="fade-up">
+                <div class="intro-section">
+                    <p>Bienvenido a Teen Informatics. Al acceder y utilizar nuestro sitio web, aceptas cumplir con estos términos y condiciones. Por favor, léelos cuidadosamente antes de usar nuestros servicios.</p>
+                </div>
+                
+                <div class="terms-section">
+                    <h2>1. Uso del Sitio</h2>
+                    <p>El contenido de este sitio es para tu información general y uso personal. Nos reservamos el derecho de modificar o retirar, temporal o permanentemente, el sitio web (o cualquier parte del mismo) sin previo aviso.</p>
+                    
+                    <h3>1.1 Acceso</h3>
+                    <p>No garantizamos que el sitio web esté disponible en todo momento o que esté libre de errores. Puedes acceder a la mayoría de las áreas del sitio web sin registrarte, aunque algunas áreas pueden requerir registro.</p>
+                    
+                    <h3>1.2 Conducta del Usuario</h3>
+                    <p>Al utilizar este sitio web, aceptas:</p>
+                    <ul>
+                        <li>No utilizar el sitio web de manera que cause daño o interrupción</li>
+                        <li>No intentar acceder a áreas restringidas sin autorización</li>
+                        <li>No utilizar el sitio web para fines ilegales o fraudulentos</li>
+                        <li>No publicar contenido ofensivo, difamatorio o ilegal</li>
+                    </ul>
+                </div>
+                
+                <div class="terms-section">
+                    <h2>2. Propiedad Intelectual</h2>
+                    <p>Todos los derechos de propiedad intelectual en el sitio web y en el material publicado en él son propiedad de Teen Informatics o de nuestros licenciantes. Esto incluye, pero no se limita a, el diseño, texto, gráficos y software.</p>
+                    
+                    <h3>2.1 Licencia de Uso</h3>
+                    <p>Se te concede una licencia limitada para acceder y hacer uso personal del sitio web, pero no para descargar (distinto al almacenamiento en caché de la página) o modificarlo, o cualquier parte del mismo, sin nuestro consentimiento expreso por escrito.</p>
+                    
+                    <h3>2.2 Contenido del Usuario</h3>
+                    <p>Al enviar contenido a nuestro sitio web, nos concedes una licencia mundial, irrevocable y libre de regalías para usar, reproducir, adaptar, publicar, traducir y distribuir dicho contenido en cualquier medio.</p>
+                </div>
+                
+                <div class="terms-section">
+                    <h2>3. Servicios Premium</h2>
+                    <p>Nuestros servicios premium están sujetos a términos adicionales que se te presentarán al momento de la suscripción. Todos los precios están sujetos a cambio sin previo aviso.</p>
+                    
+                    <h3>3.1 Suscripciones</h3>
+                    <p>Las suscripciones se renuevan automáticamente al final de cada período a menos que se cancele antes de la fecha de renovación. Puedes cancelar tu suscripción en cualquier momento.</p>
+                    
+                    <h3>3.2 Reembolsos</h3>
+                    <p>No ofrecemos reembolsos por suscripciones ya activadas, excepto cuando sea requerido por la ley aplicable.</p>
+                </div>
+                
+                <div class="terms-section">
+                    <h2>4. Limitación de Responsabilidad</h2>
+                    <p>El sitio web se proporciona "tal cual" y "según disponibilidad". No garantizamos que el sitio web sea seguro o libre de errores, ni que siempre esté disponible o que la información en él sea completa, precisa o actualizada.</p>
+                    
+                    <p>En la máxima medida permitida por la ley, excluimos todas las garantías, condiciones y términos que de otro modo podrían estar implícitos por ley.</p>
+                </div>
+                
+                <div class="terms-section">
+                    <h2>5. Privacidad</h2>
+                    <p>Tu uso del sitio web también está sujeto a nuestra Política de Privacidad, que puedes consultar en <a href="privacidad.html">esta página</a>.</p>
+                </div>
+                
+                <div class="terms-section">
+                    <h2>6. Modificaciones</h2>
+                    <p>Nos reservamos el derecho de modificar estos términos en cualquier momento. Las modificaciones entrarán en vigor inmediatamente después de su publicación en el sitio web. El uso continuado del sitio web después de dichos cambios constituirá tu aceptación de los términos modificados.</p>
+                </div>
+                
+                <div class="terms-section">
+                    <h2>7. Ley Aplicable</h2>
+                    <p>Estos términos y condiciones se regirán e interpretarán de acuerdo con las leyes del país donde Teen Informatics tiene su sede principal, sin dar efecto a ningún principio de conflictos de leyes.</p>
+                </div>
+                
+                <div class="terms-section">
+                    <h2>8. Contacto</h2>
+                    <p>Si tienes alguna pregunta sobre estos Términos y Condiciones, por favor contáctanos a través de <a href="contacto.html">nuestro formulario de contacto</a>.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+ <footer>
+        <div class="container">
+            <div class="row g-5">
+                <div class="col-lg-4">
+                    <h3 class="footer-title">Teen Informatics</h3>
+                    <p>Convierte tu curiosidad en conocimiento y tu conocimiento en poder.</p>
+                    <div class="social-links mt-4">
+                        <a href="https://www.youtube.com/@TeenInformatics-j7c" target="_blank"><i class="fab fa-youtube"></i></a>
+                        <a href="https://www.facebook.com/TeenInformaticsCode" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.tiktok.com/@teen.informatics" target="_blank"><i class="fab fa-tiktok"></i></a>
+                        <a href="https://wa.me/5219901182550" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                        <a href="https://www.instagram.com/teen_informatics?igsh=cWpvZ3RxOHN4NWNy" target="_blank"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                
+                <div class="col-lg-2 col-md-4">
+                    <h5 class="footer-title">Enlaces</h5>
+                    <ul class="footer-links p-0">
+                        <li><a href="index.html">Inicio</a></li>
+                        <li><a href="servicios.html">Servicios</a></li>
+                        <li><a href="tutoriales.html">Tutoriales</a></li>
+                        <li><a href="nosotros.html">Nosotros</a></li>
+                        <li><a href="contacto.html">Contacto</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-lg-2 col-md-4">
+                    <h5 class="footer-title">Categorías</h5>
+                    <ul class="footer-links p-0">
+                        <li><a href="#">Diseño Gráfico</a></li>
+                        <li><a href="#">Productividad</a></li>
+                        <li><a href="#">Programación</a></li>
+                        <li><a href="#">Inteligencia Artificial</a></li>
+                        <li><a href="#">Herramientas</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-lg-4 col-md-4">
+                    <h5 class="footer-title">Contacto</h5>
+                    <ul class="footer-links p-0">
+                        <li><i class="fas fa-map-marker-alt me-2"></i>Presente en el mundo digital</li>
+                        <li><i class="fas fa-phone me-2"></i> +52 990 118 2550</li>
+                        <li><i class="fas fa-envelope me-2"></i>teeninformatics@gmail.com</li>
+                        <li><i class="fas fa-clock me-2"></i> Lunes-Viernes: 9:00 - 5:00</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <hr class="mt-5 mb-4" style="border-color: #334155;">
+            
+            <div class="row">
+                <div class="col-md-6 mb-3 mb-md-0">
+                    <p class="mb-0">&copy; 2025 Teen Informatics. Todos los derechos reservados.</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <p class="mb-0">
+                        <a href="TerminosyCondiciones.html" class="text-white-50 me-3">Términos y Condiciones</a>
+                        <a href="PolíticadePrivacidad.html" class="text-white-50">Política de Privacidad</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 1000,
+            once: true
+        });
+        
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.style.padding = '10px 0';
+                navbar.style.boxShadow = '0 4px 15px rgba(0,0,0,0.1)';
+            } else {
+                navbar.style.padding = '15px 0';
+                navbar.style.boxShadow = '0 2px 10px rgba(0,0,0,0.1)';
+            }
+        });
+    </script>
+
+    <!-- Botón "Volver arriba" -->
+<div id="back-to-top" class="back-to-top">
+    <i class="fas fa-arrow-up"></i>
+</div>
+
+<style>
+    /* Estilos para el botón "Volver arriba" */
+    .back-to-top {
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+        width: 50px;
+        height: 50px;
+        background-color: #2563eb; /* Azul de tu paleta */
+        color: white;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease;
+        z-index: 999;
+    }
+    
+    .back-to-top i {
+        font-size: 20px;
+        transition: transform 0.3s ease;
+    }
+    
+    .back-to-top:hover {
+        background-color: #1e40af; /* Azul oscuro de tu paleta */
+        transform: translateY(-3px);
+        box-shadow: 0 5px 15px rgba(37, 99, 235, 0.4);
+    }
+    
+    .back-to-top:hover i {
+        transform: translateY(-3px);
+    }
+    
+    .back-to-top.active {
+        opacity: 1;
+        visibility: visible;
+    }
+    
+    /* Animación de pulso constante */
+    @keyframes pulse {
+        0% {
+            box-shadow: 0 0 0 0 rgba(37, 99, 235, 0.7);
+        }
+        70% {
+            box-shadow: 0 0 0 10px rgba(37, 99, 235, 0);
+        }
+        100% {
+            box-shadow: 0 0 0 0 rgba(37, 99, 235, 0);
+        }
+    }
+    
+    .back-to-top {
+        animation: pulse 2s infinite;
+    }
+</style>
+
+<script>
+    // Mostrar/ocultar botón al hacer scroll
+    window.addEventListener('scroll', function() {
+        var backToTop = document.getElementById('back-to-top');
+        if (window.pageYOffset > 300) {
+            backToTop.classList.add('active');
+        } else {
+            backToTop.classList.remove('active');
+        }
+    });
+    
+    // Desplazamiento suave al hacer clic
+    document.getElementById('back-to-top').addEventListener('click', function(e) {
+        e.preventDefault();
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
+</script>
+</body>
+</html>

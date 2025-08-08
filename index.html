@@ -1,0 +1,752 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teen Informatics</title>
+    <!-- Bootstrap 5.3 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- AOS Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@700;800&display=swap" rel="stylesheet">
+     <!-- Bloquear traducción automática en Chrome/Edge -->
+    <meta name="google" content="notranslate">
+    <!-- Evitar que Firefox y otros navegadores traduzcan -->
+    <meta name="robots" content="notranslate">
+    <!-- Definir el idioma de la página (opcional, pero útil) -->
+    <meta http-equiv="Content-Language" content="es">
+    <!-- También puedes usar esto para Safari y otros navegadores -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <style>
+        :root {
+            --primary: #2563eb;
+            --primary-dark: #1e40af;
+            --primary-2: #d62828;
+            --primary-3: #b41f1f;
+            --dark: #0f172a;
+            --light: #f8fafc;
+            --gray: #64748b;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: var(--dark);
+            overflow-x: hidden;
+            padding-top: 80px;
+        }
+        
+        h1, h2, h3, h4, h5 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+        }
+        
+        /* Navbar */
+        .navbar {
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            padding: 15px 0;
+            transition: all 0.3s;
+        }
+        
+        .navbar-brand {
+            font-weight: 800;
+            color: var(--primary);
+            font-size: 1.8rem;
+        }
+        
+        .nav-link {
+            font-weight: 500;
+            margin: 0 10px;
+            color: var(--dark);
+            position: relative;
+        }
+        
+        .nav-link:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary);
+            transition: width 0.3s;
+        }
+        
+        .nav-link:hover:after,
+        .nav-link.active:after {
+            width: 100%;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary-2), var(--primary-3));
+            border: none;
+            padding: 10px 25px;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(37, 99, 235, 0.4);
+        }
+        
+        /* Hero Section */
+        .hero-section {
+            background: linear-gradient(135deg, rgba(37, 99, 235, 0.9), rgba(30, 64, 175, 0.9));
+            color: white;
+            padding: 100px 0;
+            margin-bottom: 80px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://picsum.photos/1920/1080?tech') no-repeat center center/cover;
+            opacity: 0.1;
+            z-index: -1;
+        }
+        
+        /* Cards */
+        .card {
+            border: none;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: all 0.3s;
+            margin-bottom: 30px;
+            height: 100%;
+        }
+        
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(37, 99, 235, 0.2);
+        }
+        
+        .card-img-top {
+            height: 200px;
+            object-fit: cover;
+        }
+        
+        .card-body {
+            padding: 25px;
+        }
+        
+        .card-title {
+            font-weight: 700;
+            color: var(--dark);
+            margin-bottom: 15px;
+        }
+        
+        .badge {
+            background: rgba(37, 99, 235, 0.1);
+            color: var(--primary);
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-weight: 500;
+        }
+        
+        /* Section Styles */
+        .section-title {
+            position: relative;
+            margin-bottom: 50px;
+            text-align: center;
+        }
+        
+        .section-title:after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary), var(--primary-dark));
+            margin: 15px auto;
+            border-radius: 2px;
+        }
+        
+        /* Counter Section */
+        .counter-section {
+            background-color: var(--light);
+            padding: 80px 0;
+            margin: 100px 0;
+        }
+        
+        .counter {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+        
+        /* Testimonials */
+        .testimonial-card {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            margin: 20px;
+            position: relative;
+        }
+        
+        .testimonial-card:after {
+            content: '"';
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            font-size: 5rem;
+            color: rgba(37, 99, 235, 0.1);
+            font-family: serif;
+        }
+        
+        .client-img {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-right: 20px;
+        }
+        
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: white;
+            padding: 100px 0;
+            border-radius: 20px;
+            margin: 100px 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .cta-section:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://picsum.photos/1920/1080?digital') no-repeat center center/cover;
+            opacity: 0.1;
+            z-index: -1;
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--dark);
+            color: white;
+            padding: 80px 0 30px;
+        }
+        
+        .footer-title {
+            position: relative;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+        }
+        
+        .footer-title:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background: var(--primary);
+        }
+        
+        .footer-links li {
+            margin-bottom: 10px;
+            list-style: none;
+        }
+        
+        .footer-links a {
+            color: #94a3b8;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+        
+        .footer-links a:hover {
+            color: white;
+            padding-left: 5px;
+        }
+        
+        .social-links a {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            text-align: center;
+            line-height: 40px;
+            margin-right: 10px;
+            color: white;
+            transition: all 0.3s;
+        }
+        
+        .social-links a:hover {
+            background: var(--primary);
+            transform: translateY(-5px);
+        }
+        
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            body {
+                padding-top: 70px;
+            }
+            
+            .hero-section {
+                padding: 60px 0;
+                margin-bottom: 50px;
+            }
+            
+            .counter {
+                font-size: 2.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">Teen Informatics</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="index.html">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="servicios.html">Servicios</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="tutoriales.html">Tutoriales</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="nosotros.html">Nosotros</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contacto.html">Contacto</a>
+                    </li>
+                </ul>
+                <div class="ms-lg-3 mt-3 mt-lg-0">
+                    <a href="https://www.youtube.com/@TeenInformatics-j7c" target="_blank" class="btn btn-primary">Canal de Youtube</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <h1 class="display-4 fw-bold mb-4">Transforma tu empresa con nuestros cursos tecnológicos</h1>
+                    <p class="lead mb-5">Formación empresarial en tecnología, diseño, programación e IA para equipos de alto rendimiento.</p>
+                    <div class="d-flex flex-wrap gap-3">
+                        <a href="#cursos" class="btn btn-light btn-lg px-4 py-3 fw-bold">Explorar Cursos</a>
+                        <a href="contacto.html" class="btn btn-outline-light btn-lg px-4 py-3 fw-bold">Contacto</a>
+                    </div>
+                </div>
+                <div class="col-lg-6 d-none d-lg-block text-center">
+                    <img src="https://picsum.photos/600/400?business" alt="Teen Informatics" class="img-fluid rounded-3 shadow">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Nuestros Cursos -->
+    <section id="cursos" class="py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h2 class="section-title">Nuestros Cursos Empresariales</h2>
+                </div>
+            </div>
+            
+            <div class="row">
+                <!-- Curso 1 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card">
+                        <img src="https://picsum.photos/400/300?ai" class="card-img-top" alt="Inteligencia Artificial">
+                        <div class="card-body">
+                            <span class="badge">8 semanas</span>
+                            <h3 class="card-title mt-3">Inteligencia Artificial para Negocios</h3>
+                            <p class="card-text">Aprende a implementar soluciones de IA que transformen tus procesos empresariales y mejoren la toma de decisiones.</p>
+                            <a href="#" class="btn btn-outline-primary mt-3">Ver detalles</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Curso 2 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card">
+                        <img src="https://picsum.photos/400/300?blockchain" class="card-img-top" alt="Blockchain">
+                        <div class="card-body">
+                            <span class="badge">6 semanas</span>
+                            <h3 class="card-title mt-3">Blockchain para Empresas</h3>
+                            <p class="card-text">Domina la tecnología blockchain y sus aplicaciones empresariales en finanzas, logística y contratos inteligentes.</p>
+                            <a href="#" class="btn btn-outline-primary mt-3">Ver detalles</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Curso 3 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card">
+                        <img src="https://picsum.photos/400/300?design" class="card-img-top" alt="UX/UI">
+                        <div class="card-body">
+                            <span class="badge">10 semanas</span>
+                            <h3 class="card-title mt-3">Diseño UX/UI Avanzado</h3>
+                            <p class="card-text">Crea experiencias digitales excepcionales con metodologías de diseño centradas en el usuario.</p>
+                            <a href="#" class="btn btn-outline-primary mt-3">Ver detalles</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Curso 4 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card">
+                        <img src="https://picsum.photos/400/300?programming" class="card-img-top" alt="Programación">
+                        <div class="card-body">
+                            <span class="badge">12 semanas</span>
+                            <h3 class="card-title mt-3">Desarrollo Full Stack</h3>
+                            <p class="card-text">Conviértete en un desarrollador completo dominando frontend, backend y bases de datos.</p>
+                            <a href="#" class="btn btn-outline-primary mt-3">Ver detalles</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Curso 5 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card">
+                        <img src="https://picsum.photos/400/300?data" class="card-img-top" alt="Ciencia de Datos">
+                        <div class="card-body">
+                            <span class="badge">9 semanas</span>
+                            <h3 class="card-title mt-3">Ciencia de Datos para Negocios</h3>
+                            <p class="card-text">Extrae insights valiosos de tus datos para impulsar el crecimiento empresarial.</p>
+                            <a href="#" class="btn btn-outline-primary mt-3">Ver detalles</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Curso 6 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card">
+                        <img src="https://picsum.photos/400/300?cloud" class="card-img-top" alt="Cloud Computing">
+                        <div class="card-body">
+                            <span class="badge">7 semanas</span>
+                            <h3 class="card-title mt-3">Cloud Computing Empresarial</h3>
+                            <p class="card-text">Implementa soluciones en la nube que escalen con tu negocio y optimicen costos.</p>
+                            <a href="#" class="btn btn-outline-primary mt-3">Ver detalles</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Counter Section -->
+    <section class="counter-section">
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-md-3 col-6 mb-5 mb-md-0">
+                    <div class="counter" data-count="12000">0</div>
+                    <p>Alumnos Formados</p>
+                </div>
+                <div class="col-md-3 col-6 mb-5 mb-md-0">
+                    <div class="counter" data-count="85">0</div>
+                    <p>Cursos Disponibles</p>
+                </div>
+                <div class="col-md-3 col-6">
+                    <div class="counter" data-count="35">0</div>
+                    <p>Países</p>
+                </div>
+                <div class="col-md-3 col-6">
+                    <div class="counter" data-count="98">0</div>
+                    <p>Satisfacción de Clientes</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonios -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h2 class="section-title">Lo que Dicen Nuestros Clientes</h2>
+                </div>
+            </div>
+            
+            <div class="row mt-5">
+                <div class="col-md-4">
+                    <div class="testimonial-card">
+                        <p class="mb-4">"Los cursos de Teen Informatics transformaron nuestra forma de trabajar. Implementamos soluciones de IA que redujeron nuestros costos operativos en un 30%."</p>
+                        <div class="d-flex align-items-center">
+                            <img src="https://picsum.photos/100/100?person1" class="client-img" alt="Cliente">
+                            <div>
+                                <h5 class="mb-0">María Rodríguez</h5>
+                                <p class="text-muted mb-0">Directora de Innovación</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-4">
+                    <div class="testimonial-card">
+                        <p class="mb-4">"La formación en blockchain permitió a nuestro equipo desarrollar soluciones seguras para nuestros clientes financieros. ¡Invaluable!"</p>
+                        <div class="d-flex align-items-center">
+                            <img src="https://picsum.photos/100/100?person2" class="client-img" alt="Cliente">
+                            <div>
+                                <h5 class="mb-0">Carlos Méndez</h5>
+                                <p class="text-muted mb-0">CTO FinTech Solutions</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-4">
+                    <div class="testimonial-card">
+                        <p class="mb-4">"El curso de UX/UI ha revolucionado nuestros productos digitales. La satisfacción de nuestros usuarios aumentó un 45%."</p>
+                        <div class="d-flex align-items-center">
+                            <img src="https://picsum.photos/100/100?person3" class="client-img" alt="Cliente">
+                            <div>
+                                <h5 class="mb-0">Ana López</h5>
+                                <p class="text-muted mb-0">Directora de Producto</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8 text-center">
+                    <h2 class="display-5 fw-bold mb-4">¿Listo para transformar tu empresa?</h2>
+                    <p class="lead mb-5">Únete a más de 2,000 empresas que ya están utilizando nuestros cursos para impulsar su transformación digital.</p>
+                    <a href="contacto.html" class="btn btn-light btn-lg px-5 py-3 fw-bold">Inscríbete Hoy</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row g-5">
+                <div class="col-lg-4">
+                    <h3 class="footer-title">Teen Informatics</h3>
+                    <p>Convierte tu curiosidad en conocimiento y tu conocimiento en poder.</p>
+                    <div class="social-links mt-4">
+                        <a href="https://www.youtube.com/@TeenInformatics-j7c" target="_blank"><i class="fab fa-youtube"></i></a>
+                        <a href="https://www.facebook.com/TeenInformaticsCode" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.tiktok.com/@teen.informatics" target="_blank"><i class="fab fa-tiktok"></i></a>
+                        <a href="https://wa.me/5219901182550" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                        <a href="https://www.instagram.com/teen_informatics?igsh=cWpvZ3RxOHN4NWNy" target="_blank"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                
+                <div class="col-lg-2 col-md-4">
+                    <h5 class="footer-title">Enlaces</h5>
+                    <ul class="footer-links p-0">
+                        <li><a href="index.html">Inicio</a></li>
+                        <li><a href="servicios.html">Servicios</a></li>
+                        <li><a href="tutoriales.html">Tutoriales</a></li>
+                        <li><a href="nosotros.html">Nosotros</a></li>
+                        <li><a href="contacto.html">Contacto</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-lg-2 col-md-4">
+                    <h5 class="footer-title">Categorías</h5>
+                    <ul class="footer-links p-0">
+                        <li><a href="#">Diseño Gráfico</a></li>
+                        <li><a href="#">Productividad</a></li>
+                        <li><a href="#">Programación</a></li>
+                        <li><a href="#">Inteligencia Artificial</a></li>
+                        <li><a href="#">Herramientas</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-lg-4 col-md-4">
+                    <h5 class="footer-title">Contacto</h5>
+                    <ul class="footer-links p-0">
+                        <li><i class="fas fa-map-marker-alt me-2"></i>Presente en el mundo digital</li>
+                        <li><i class="fas fa-phone me-2"></i> +52 990 118 2550</li>
+                        <li><i class="fas fa-envelope me-2"></i>teeninformatics@gmail.com</li>
+                        <li><i class="fas fa-clock me-2"></i> Lunes-Viernes: 9:00 - 5:00</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <hr class="mt-5 mb-4" style="border-color: #334155;">
+            
+            <div class="row">
+                <div class="col-md-6 mb-3 mb-md-0">
+                    <p class="mb-0">&copy; 2025 Teen Informatics. Todos los derechos reservados.</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <p class="mb-0">
+                        <a href="TerminosyCondiciones.html" class="text-white-50 me-3">Términos y Condiciones</a>
+                        <a href="PolíticadePrivacidad.html" class="text-white-50">Política de Privacidad</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 1000,
+            once: true
+        });
+        
+        // Counter animation
+        document.addEventListener('DOMContentLoaded', function() {
+            const counters = document.querySelectorAll('.counter');
+            const speed = 200;
+            
+            counters.forEach(counter => {
+                const updateCount = () => {
+                    const target = +counter.getAttribute('data-count');
+                    const count = +counter.innerText;
+                    
+                    const inc = target / speed;
+                    
+                    if (count < target) {
+                        counter.innerText = Math.ceil(count + inc);
+                        setTimeout(updateCount, 1);
+                    } else {
+                        counter.innerText = target;
+                    }
+                };
+                
+                // Start counting when element is in viewport
+                const observer = new IntersectionObserver((entries) => {
+                    if (entries[0].isIntersecting) {
+                        updateCount();
+                        observer.disconnect();
+                    }
+                });
+                
+                observer.observe(counter);
+            });
+        });
+        
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.style.padding = '10px 0';
+                navbar.style.boxShadow = '0 4px 15px rgba(0,0,0,0.1)';
+            } else {
+                navbar.style.padding = '15px 0';
+                navbar.style.boxShadow = '0 2px 10px rgba(0,0,0,0.1)';
+            }
+        });
+    </script>
+
+    <!-- Botón "Volver arriba" -->
+<div id="back-to-top" class="back-to-top">
+    <i class="fas fa-arrow-up"></i>
+</div>
+
+<style>
+    /* Estilos para el botón "Volver arriba" */
+    .back-to-top {
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+        width: 50px;
+        height: 50px;
+        background-color: #2563eb; /* Azul de tu paleta */
+        color: white;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease;
+        z-index: 999;
+    }
+    
+    .back-to-top i {
+        font-size: 20px;
+        transition: transform 0.3s ease;
+    }
+    
+    .back-to-top:hover {
+        background-color: #1e40af; /* Azul oscuro de tu paleta */
+        transform: translateY(-3px);
+        box-shadow: 0 5px 15px rgba(37, 99, 235, 0.4);
+    }
+    
+    .back-to-top:hover i {
+        transform: translateY(-3px);
+    }
+    
+    .back-to-top.active {
+        opacity: 1;
+        visibility: visible;
+    }
+    
+    /* Animación de pulso constante */
+    @keyframes pulse {
+        0% {
+            box-shadow: 0 0 0 0 rgba(37, 99, 235, 0.7);
+        }
+        70% {
+            box-shadow: 0 0 0 10px rgba(37, 99, 235, 0);
+        }
+        100% {
+            box-shadow: 0 0 0 0 rgba(37, 99, 235, 0);
+        }
+    }
+    
+    .back-to-top {
+        animation: pulse 2s infinite;
+    }
+</style>
+
+<script>
+    // Mostrar/ocultar botón al hacer scroll
+    window.addEventListener('scroll', function() {
+        var backToTop = document.getElementById('back-to-top');
+        if (window.pageYOffset > 300) {
+            backToTop.classList.add('active');
+        } else {
+            backToTop.classList.remove('active');
+        }
+    });
+    
+    // Desplazamiento suave al hacer clic
+    document.getElementById('back-to-top').addEventListener('click', function(e) {
+        e.preventDefault();
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
+</script>
+    
+</body>
+</html>

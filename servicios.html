@@ -1,0 +1,1199 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teen Informatics - Nuestros Servicios</title>
+    <!-- Bootstrap 5.3 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- AOS Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@700;800&display=swap" rel="stylesheet">
+     <!-- Bloquear traducción automática en Chrome/Edge -->
+    <meta name="google" content="notranslate">
+    <!-- Evitar que Firefox y otros navegadores traduzcan -->
+    <meta name="robots" content="notranslate">
+    <!-- Definir el idioma de la página (opcional, pero útil) -->
+    <meta http-equiv="Content-Language" content="es">
+    <!-- También puedes usar esto para Safari y otros navegadores -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <style>
+        :root {
+            --primary: #2563eb;
+            --primary-dark: #1e40af;
+            --primary-2: #d62828;
+            --primary-3: #b41f1f;
+            --dark: #0f172a;
+            --light: #f8fafc;
+            --gray: #64748b;
+            --creative: #8a2be2;
+            --design: #ff6b6b;
+            --tech: #20c997;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: var(--dark);
+            overflow-x: hidden;
+            padding-top: 80px;
+            background-color: #f8f9fa;
+        }
+        
+        h1, h2, h3, h4, h5 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+        }
+        
+        /* Navbar */
+        .navbar {
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            padding: 15px 0;
+            transition: all 0.3s;
+        }
+        
+        .navbar-brand {
+            font-weight: 800;
+            color: var(--primary);
+            font-size: 1.8rem;
+        }
+        
+        .nav-link {
+            font-weight: 500;
+            margin: 0 10px;
+            color: var(--dark);
+            position: relative;
+        }
+        
+        .nav-link:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary);
+            transition: width 0.3s;
+        }
+        
+        .nav-link:hover:after,
+        .nav-link.active:after {
+            width: 100%;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary-2), var(--primary-3));
+            border: none;
+            padding: 10px 25px;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(37, 99, 235, 0.4);
+        }
+        
+        /* Hero Section */
+        .services-hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('https://picsum.photos/1920/1080?design');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 150px 0 100px;
+            text-align: center;
+            margin-bottom: 80px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .services-hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+        }
+        
+        .services-hero::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 10px;
+            background: linear-gradient(90deg, var(--creative), var(--design), var(--tech));
+        }
+        
+        /* Service Cards */
+        .service-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+            transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+            z-index: 1;
+        }
+        
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: var(--primary);
+            transition: all 0.3s;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-15px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(37, 99, 235, 0.2);
+        }
+        
+        .service-card:hover::before {
+            height: 10px;
+            background: linear-gradient(90deg, var(--creative), var(--primary));
+        }
+        
+        .service-icon {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+            transition: all 0.3s;
+        }
+        
+        .service-card:hover .service-icon {
+            transform: rotate(15deg) scale(1.2);
+            color: var(--creative);
+        }
+        
+        .service-price {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin: 15px 0;
+            transition: all 0.3s;
+        }
+        
+        .service-card:hover .service-price {
+            color: var(--creative);
+            transform: scale(1.1);
+        }
+        
+        .service-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: var(--primary);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            transform: translateY(-20px);
+            opacity: 0;
+            transition: all 0.3s;
+        }
+        
+        .service-card:hover .service-badge {
+            transform: translateY(0);
+            opacity: 1;
+        }
+        
+        /* Service Tabs */
+        .service-tabs {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            margin-bottom: 50px;
+            overflow: hidden;
+        }
+        
+        .nav-tabs .nav-link {
+            border: none;
+            padding: 15px 25px;
+            font-weight: 600;
+            color: var(--gray);
+        }
+        
+        .nav-tabs .nav-link.active {
+            color: var(--primary);
+            background: rgba(37, 99, 235, 0.05);
+            border-bottom: 3px solid var(--primary);
+        }
+        
+        .tab-content {
+            padding: 30px;
+        }
+        
+        /* Pricing Table */
+        .pricing-card {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            padding: 30px;
+            margin-bottom: 30px;
+            transition: all 0.3s;
+            border-top: 5px solid var(--primary);
+        }
+        
+        .pricing-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(37, 99, 235, 0.2);
+        }
+        
+        .pricing-card.featured {
+            border-top: 5px solid var(--creative);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .pricing-card.featured::after {
+            content: 'POPULAR';
+            position: absolute;
+            top: 15px;
+            right: -30px;
+            background: var(--creative);
+            color: white;
+            padding: 5px 30px;
+            transform: rotate(45deg);
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+        
+        .pricing-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .pricing-price {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+        
+        .pricing-card.featured .pricing-price {
+            color: var(--creative);
+        }
+        
+        .pricing-features {
+            list-style: none;
+            padding: 0;
+            margin-bottom: 30px;
+        }
+        
+        .pricing-features li {
+            padding: 10px 0;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            align-items: center;
+        }
+        
+        .pricing-features li i {
+            margin-right: 10px;
+            color: var(--primary);
+        }
+        
+        .pricing-card.featured .pricing-features li i {
+            color: var(--creative);
+        }
+        
+        /* Testimonials */
+        .testimonial-slider {
+            background: linear-gradient(135deg, rgba(37, 99, 235, 0.05), rgba(30, 64, 175, 0.05));
+            padding: 80px 0;
+            margin: 80px 0;
+        }
+        
+        .testimonial-card {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            margin: 15px;
+            position: relative;
+        }
+        
+        .testimonial-card::before {
+            content: '"';
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            font-size: 5rem;
+            color: rgba(37, 99, 235, 0.1);
+            font-family: serif;
+        }
+        
+        .client-info {
+            display: flex;
+            align-items: center;
+            margin-top: 20px;
+        }
+        
+        .client-img {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-right: 15px;
+            border: 3px solid var(--primary);
+        }
+        
+        /* Section Styles */
+        .section-title {
+            position: relative;
+            margin-bottom: 50px;
+            text-align: center;
+        }
+        
+        .section-title:after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary), var(--primary-dark));
+            margin: 15px auto;
+            border-radius: 2px;
+        }
+        
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: white;
+            padding: 100px 0;
+            border-radius: 15px;
+            margin: 80px 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://picsum.photos/1920/1080?digital') no-repeat center center/cover;
+            opacity: 0.1;
+            z-index: -1;
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--dark);
+            color: white;
+            padding: 80px 0 30px;
+        }
+        
+        .footer-title {
+            position: relative;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+        }
+        
+        .footer-title:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background: var(--primary);
+        }
+        
+        .footer-links li {
+            margin-bottom: 10px;
+            list-style: none;
+        }
+        
+        .footer-links a {
+            color: #94a3b8;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+        
+        .footer-links a:hover {
+            color: white;
+            padding-left: 5px;
+        }
+        
+        .social-links a {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            text-align: center;
+            line-height: 40px;
+            margin-right: 10px;
+            color: white;
+            transition: all 0.3s;
+        }
+        
+        .social-links a:hover {
+            background: var(--primary);
+            transform: translateY(-5px);
+        }
+        
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            body {
+                padding-top: 70px;
+            }
+            
+            .services-hero {
+                padding: 100px 0 60px;
+            }
+            
+            .services-hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .service-card {
+                margin-bottom: 20px;
+            }
+            
+            .pricing-card {
+                margin-bottom: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">Teen Informatics</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="servicios.html">Servicios</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="tutoriales.html">Tutoriales</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="nosotros.html">Nosotros</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contacto.html">Contacto</a>
+                    </li>
+                </ul>
+                <div class="ms-lg-3 mt-3 mt-lg-0">
+                    <a href="https://www.youtube.com/@TeenInformatics-j7c" target="_blank" class="btn btn-primary">Canal de Youtube</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="services-hero">
+        <div class="container">
+            <h1 data-aos="fade-down">Nuestros Servicios</h1>
+            <p class="lead" data-aos="fade-up" data-aos-delay="200">Soluciones creativas y tecnológicas para impulsar tu negocio</p>
+        </div>
+    </section>
+
+    <!-- Servicios de Diseño Gráfico -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h2 class="section-title">Diseño Gráfico Profesional</h2>
+                    <p class="lead text-center mb-5">Creamos identidades visuales impactantes para tu marca</p>
+                </div>
+            </div>
+            
+            <div class="row">
+                <!-- Servicio 1 -->
+<div class="col-md-4" data-aos="fade-up">
+    <div class="service-card">
+        <div class="service-badge">Más Popular</div>
+        <div class="card-body text-center">
+            <div class="service-icon">
+                <i class="fas fa-palette"></i>
+            </div>
+            <h3>Diseño de Logotipos</h3>
+            <p>Creación de identidad visual única para tu marca con 3 propuestas iniciales.</p>
+            <div class="service-price">$299</div>
+            <ul class="list-unstyled mb-4 text-center">
+                <li class="d-flex align-items-center justify-content-center">
+                    <i class="fas fa-check text-primary me-2"></i> 3 Conceptos iniciales
+                </li>
+                <li class="d-flex align-items-center justify-content-center">
+                    <i class="fas fa-check text-primary me-2"></i> Revisiones ilimitadas
+                </li>
+                <li class="d-flex align-items-center justify-content-center">
+                    <i class="fas fa-check text-primary me-2"></i> Archivos vectoriales
+                </li>
+                <li class="d-flex align-items-center justify-content-center">
+                    <i class="fas fa-check text-primary me-2"></i> Guía de uso básico
+                </li>
+            </ul>
+            <a href="#" class="btn btn-outline-primary">Más Información</a>
+        </div><br>
+    </div>
+</div>
+                
+                <!-- Servicio 2 -->
+<div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+    <div class="service-card">
+        <div class="card-body text-center">
+            <div class="service-icon">
+                <i class="fas fa-envelope-open-text"></i>
+            </div>
+            <h3>Invitaciones Digitales</h3>
+            <p>Diseño de invitaciones interactivas para eventos con animaciones y efectos.</p>
+            <div class="service-price">$149</div>
+            <ul class="list-unstyled mb-4 text-center">
+                <li class="d-flex align-items-center justify-content-center">
+                    <i class="fas fa-check text-primary me-2"></i> Diseño personalizado
+                </li>
+                <li class="d-flex align-items-center justify-content-center">
+                    <i class="fas fa-check text-primary me-2"></i> Versión PDF dinámico
+                </li>
+                <li class="d-flex align-items-center justify-content-center">
+                    <i class="fas fa-check text-primary me-2"></i> Versión imagen (JPG/PNG)
+                </li>
+                <li class="d-flex align-items-center justify-content-center">
+                    <i class="fas fa-check text-primary me-2"></i> Animaciones básicas
+                </li>
+            </ul>
+            <a href="#" class="btn btn-outline-primary">Más Información</a>
+        </div><br>
+    </div>
+</div>
+
+<!-- Servicio 3 -->
+<div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+    <div class="service-card">
+        <div class="service-badge">Nuevo</div>
+        <div class="card-body text-center">
+            <div class="service-icon">
+                <i class="fas fa-id-card"></i>
+            </div>
+            <h3>Tarjetas de Presentación</h3>
+            <p>Diseño profesional de tarjetas para networking y contactos comerciales.</p>
+            <div class="service-price">Desde $99</div>
+            <ul class="list-unstyled mb-4 text-center">
+                <li class="d-flex align-items-center justify-content-center">
+                    <i class="fas fa-check text-primary me-2"></i> 1 Vista: $99
+                </li>
+                <li class="d-flex align-items-center justify-content-center">
+                    <i class="fas fa-check text-primary me-2"></i> 2 Vistas: $149
+                </li>
+                <li class="d-flex align-items-center justify-content-center">
+                    <i class="fas fa-check text-primary me-2"></i> Archivos para impresión
+                </li>
+                <li class="d-flex align-items-center justify-content-center">
+                    <i class="fas fa-check text-primary me-2"></i> Versión digital incluida
+                </li>
+            </ul>
+            <a href="#" class="btn btn-outline-primary">Más Información</a>
+        </div><br>
+    </div>
+</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Servicios Adicionales -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h2 class="section-title">Más Servicios Creativos</h2>
+                    <p class="lead text-center mb-5">Expandimos tus posibilidades con soluciones innovadoras</p>
+                </div>
+            </div>
+            
+            <div class="service-tabs">
+                <ul class="nav nav-tabs" id="servicesTab" role="tablist">
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link active" id="design-tab" data-bs-toggle="tab" data-bs-target="#design" type="button" role="tab">Diseño</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="video-tab" data-bs-toggle="tab" data-bs-target="#video" type="button" role="tab">Video</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="tech-tab" data-bs-toggle="tab" data-bs-target="#tech" type="button" role="tab">Tecnología</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="training-tab" data-bs-toggle="tab" data-bs-target="#training" type="button" role="tab">Capacitación</button>
+                    </li>
+                </ul>
+                <div class="tab-content" id="servicesTabContent">
+                    <!-- Pestaña Diseño -->
+                    <div class="tab-pane fade show active" id="design" role="tabpanel">
+                        <div class="row">
+                            <!-- Servicio 4 -->
+                            <div class="col-md-6 mb-4" data-aos="fade-right">
+                                <div class="d-flex">
+                                    <div class="flex-shrink-0">
+                                        <i class="fas fa-icons text-primary fs-1 me-4"></i>
+                                    </div>
+                                    <div class="flex-grow-1 ms-3">
+                                        <h3>Pack Redes Sociales</h3>
+                                        <p>Creación de contenido visual mensual para tus redes sociales (12 posts, 24 stories, banner de perfil).</p>
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <span class="fw-bold text-primary">$399/mes</span>
+                                            <a href="#" class="btn btn-sm btn-outline-primary">Saber más</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Servicio 5 -->
+                            <div class="col-md-6 mb-4" data-aos="fade-left">
+                                <div class="d-flex">
+                                    <div class="flex-shrink-0">
+                                        <i class="fas fa-book-open text-primary fs-1 me-4"></i>
+                                    </div>
+                                    <div class="flex-grow-1 ms-3">
+                                        <h3>Diseño Editorial</h3>
+                                        <p>Maquetación profesional de catálogos, revistas, folletos y libros con Adobe InDesign.</p>
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <span class="fw-bold text-primary">Desde $199</span>
+                                            <a href="#" class="btn btn-sm btn-outline-primary">Saber más</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Servicio 6 -->
+                            <div class="col-md-6 mb-4" data-aos="fade-right">
+                                <div class="d-flex">
+                                    <div class="flex-shrink-0">
+                                        <i class="fas fa-t-shirt text-primary fs-1 me-4"></i>
+                                    </div>
+                                    <div class="flex-grow-1 ms-3">
+                                        <h3>Diseño de Merchandising</h3>
+                                        <p>Creación de artículos promocionales (camisetas, tazas, bolsas) con tu marca.</p>
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <span class="fw-bold text-primary">$149 + producción</span>
+                                            <a href="#" class="btn btn-sm btn-outline-primary">Saber más</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Servicio 7 -->
+                            <div class="col-md-6 mb-4" data-aos="fade-left">
+                                <div class="d-flex">
+                                    <div class="flex-shrink-0">
+                                        <i class="fas fa-sign text-primary fs-1 me-4"></i>
+                                    </div>
+                                    <div class="flex-grow-1 ms-3">
+                                        <h3>Señalética y Wayfinding</h3>
+                                        <p>Diseño de sistemas de orientación espacial para negocios y eventos.</p>
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <span class="fw-bold text-primary">Desde $249</span>
+                                            <a href="#" class="btn btn-sm btn-outline-primary">Saber más</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Pestaña Video -->
+                    <div class="tab-pane fade" id="video" role="tabpanel">
+                        <div class="row">
+                            <!-- Servicio 8 -->
+                            <div class="col-md-6 mb-4">
+                                <div class="d-flex">
+                                    <div class="flex-shrink-0">
+                                        <i class="fas fa-video text-primary fs-1 me-4"></i>
+                                    </div>
+                                    <div class="flex-grow-1 ms-3">
+                                        <h3>Edición de Video Profesional</h3>
+                                        <p>Producción y edición de videos corporativos, promocionales y para redes sociales.</p>
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <span class="fw-bold text-primary">$199/minuto</span>
+                                            <a href="#" class="btn btn-sm btn-outline-primary">Saber más</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Servicio 9 -->
+                            <div class="col-md-6 mb-4">
+                                <div class="d-flex">
+                                    <div class="flex-shrink-0">
+                                        <i class="fas fa-film text-primary fs-1 me-4"></i>
+                                    </div>
+                                    <div class="flex-grow-1 ms-3">
+                                        <h3>Animación Motion Graphics</h3>
+                                        <p>Creación de videos animados con gráficos en movimiento para explicar conceptos.</p>
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <span class="fw-bold text-primary">$299/minuto</span>
+                                            <a href="#" class="btn btn-sm btn-outline-primary">Saber más</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Pestaña Tecnología -->
+                    <div class="tab-pane fade" id="tech" role="tabpanel">
+                        <div class="row">
+                            <!-- Servicio 10 -->
+                            <div class="col-md-6 mb-4">
+                                <div class="d-flex">
+                                    <div class="flex-shrink-0">
+                                        <i class="fas fa-code text-primary fs-1 me-4"></i>
+                                    </div>
+                                    <div class="flex-grow-1 ms-3">
+                                        <h3>Desarrollo Web Básico</h3>
+                                        <p>Sitio web informativo de 5 páginas con diseño responsivo y formulario de contacto.</p>
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <span class="fw-bold text-primary">$699</span>
+                                            <a href="#" class="btn btn-sm btn-outline-primary">Saber más</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Servicio 11 -->
+                            <div class="col-md-6 mb-4">
+                                <div class="d-flex">
+                                    <div class="flex-shrink-0">
+                                        <i class="fas fa-database text-primary fs-1 me-4"></i>
+                                    </div>
+                                    <div class="flex-grow-1 ms-3">
+                                        <h3>Automatización con Excel</h3>
+                                        <p>Creación de macros y sistemas automatizados para procesamiento de datos.</p>
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <span class="fw-bold text-primary">$349</span>
+                                            <a href="#" class="btn btn-sm btn-outline-primary">Saber más</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Servicio 12 -->
+                            <div class="col-md-6 mb-4">
+                                <div class="d-flex">
+                                    <div class="flex-shrink-0">
+                                        <i class="fas fa-robot text-primary fs-1 me-4"></i>
+                                    </div>
+                                    <div class="flex-grow-1 ms-3">
+                                        <h3>Chatbots Personalizados</h3>
+                                        <p>Desarrollo de asistentes virtuales para atención al cliente en tu sitio web.</p>
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <span class="fw-bold text-primary">$499</span>
+                                            <a href="#" class="btn btn-sm btn-outline-primary">Saber más</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Pestaña Capacitación -->
+                    <div class="tab-pane fade" id="training" role="tabpanel">
+                        <div class="row">
+                            <!-- Servicio 13 -->
+                            <div class="col-md-6 mb-4">
+                                <div class="d-flex">
+                                    <div class="flex-shrink-0">
+                                        <i class="fas fa-chalkboard-teacher text-primary fs-1 me-4"></i>
+                                    </div>
+                                    <div class="flex-grow-1 ms-3">
+                                        <h3>Talleres de Diseño</h3>
+                                        <p>Sesiones personalizadas de 4 horas para aprender herramientas de diseño gráfico.</p>
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <span class="fw-bold text-primary">$199/persona</span>
+                                            <a href="#" class="btn btn-sm btn-outline-primary">Saber más</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Servicio 14 -->
+                            <div class="col-md-6 mb-4">
+                                <div class="d-flex">
+                                    <div class="flex-shrink-0">
+                                        <i class="fas fa-laptop-code text-primary fs-1 me-4"></i>
+                                    </div>
+                                    <div class="flex-grow-1 ms-3">
+                                        <h3>Mentoría en Programación</h3>
+                                        <p>Sesiones 1-a-1 para resolver dudas y avanzar en tus proyectos de desarrollo.</p>
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <span class="fw-bold text-primary">$49/hora</span>
+                                            <a href="#" class="btn btn-sm btn-outline-primary">Saber más</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Planes de Servicio -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h2 class="section-title">Planes de Servicio Mensuales</h2>
+                    <p class="lead text-center mb-5">Elige el paquete que mejor se adapte a tus necesidades</p>
+                </div>
+            </div>
+            
+            <div class="row">
+                <!-- Plan Básico -->
+                <div class="col-md-4" data-aos="fade-up">
+                    <div class="pricing-card">
+                        <div class="pricing-header">
+                            <h3>Básico</h3>
+                            <p>Para emprendedores</p>
+                            <div class="pricing-price">$199/mes</div>
+                        </div>
+                        <div class="pricing-body">
+                            <ul class="pricing-features">
+                                <li><i class="fas fa-check"></i> 2 Diseños simples/mes</li>
+                                <li><i class="fas fa-check"></i> 1 Revisión por diseño</li>
+                                <li><i class="fas fa-check"></i> Formatos JPG/PNG</li>
+                                <li><i class="fas fa-check"></i> Soporte por email</li>
+                                <li><i class="fas fa-times"></i> Archivos editables</li>
+                                <li><i class="fas fa-times"></i> Prioridad en revisiones</li>
+                            </ul>
+                            <a href="#" class="btn btn-outline-primary w-100">Contratar</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Plan Profesional -->
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="pricing-card featured">
+                        <div class="pricing-header">
+                            <h3>Profesional</h3>
+                            <p>Para pequeñas empresas</p>
+                            <div class="pricing-price">$399/mes</div>
+                        </div>
+                        <div class="pricing-body">
+                            <ul class="pricing-features">
+                                <li><i class="fas fa-check"></i> 5 Diseños complejos/mes</li>
+                                <li><i class="fas fa-check"></i> 3 Revisiones por diseño</li>
+                                <li><i class="fas fa-check"></i> Formatos JPG/PNG/PDF</li>
+                                <li><i class="fas fa-check"></i> Soporte prioritario</li>
+                                <li><i class="fas fa-check"></i> Archivos editables</li>
+                                <li><i class="fas fa-check"></i> 1 Video simple/mes</li>
+                            </ul>
+                            <a href="#" class="btn btn-primary w-100">Contratar</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Plan Empresarial -->
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="pricing-card">
+                        <div class="pricing-header">
+                            <h3>Empresarial</h3>
+                            <p>Para agencias y equipos</p>
+                            <div class="pricing-price">$799/mes</div>
+                        </div>
+                        <div class="pricing-body">
+                            <ul class="pricing-features">
+                                <li><i class="fas fa-check"></i> Diseños ilimitados</li>
+                                <li><i class="fas fa-check"></i> Revisiones ilimitadas</li>
+                                <li><i class="fas fa-check"></i> Todos los formatos</li>
+                                <li><i class="fas fa-check"></i> Soporte 24/7</li>
+                                <li><i class="fas fa-check"></i> Archivos editables</li>
+                                <li><i class="fas fa-check"></i> 4 Videos/mes</li>
+                            </ul>
+                            <a href="#" class="btn btn-outline-primary w-100">Contratar</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonios -->
+    <section class="testimonial-slider">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h2 class="section-title">Lo que dicen nuestros clientes</h2>
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="testimonial-card">
+                        <p>"El logo que diseñaron capturó perfectamente la esencia de mi marca. El proceso fue profesional y recibí múltiples opciones para elegir."</p>
+                        <div class="client-info">
+                            <img src="https://picsum.photos/100/100?person1" alt="Cliente" class="client-img">
+                            <div>
+                                <h5 class="mb-0">Ana Martínez</h5>
+                                <p class="text-muted mb-0">Dueña de Cafetería</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-4">
+                    <div class="testimonial-card">
+                        <p>"Contraté el plan profesional y ha sido la mejor inversión para mi negocio. Ahora tengo contenido profesional constante para mis redes."</p>
+                        <div class="client-info">
+                            <img src="https://picsum.photos/100/100?person2" alt="Cliente" class="client-img">
+                            <div>
+                                <h5 class="mb-0">Carlos Rodríguez</h5>
+                                <p class="text-muted mb-0">Emprendedor</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-4">
+                    <div class="testimonial-card">
+                        <p>"Las tarjetas de presentación que diseñaron han impresionado a todos mis clientes. El servicio fue rápido y el resultado superó mis expectativas."</p>
+                        <div class="client-info">
+                            <img src="https://picsum.photos/100/100?person3" alt="Cliente" class="client-img">
+                            <div>
+                                <h5 class="mb-0">María González</h5>
+                                <p class="text-muted mb-0">Consultora Financiera</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8 text-center">
+                    <h2 class="display-5 fw-bold mb-4">¿Listo para llevar tu marca al siguiente nivel?</h2>
+                    <p class="lead mb-5">Nuestro equipo está listo para crear soluciones visuales impactantes para tu negocio.</p>
+                    <a href="contacto.html" class="btn btn-light btn-lg px-5 py-3 fw-bold me-3">Contáctanos</a>
+                    <a href="#" class="btn btn-outline-light btn-lg px-5 py-3 fw-bold">Ver Portafolio</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+  <footer>
+        <div class="container">
+            <div class="row g-5">
+                <div class="col-lg-4">
+                    <h3 class="footer-title">Teen Informatics</h3>
+                    <p>Convierte tu curiosidad en conocimiento y tu conocimiento en poder.</p>
+                    <div class="social-links mt-4">
+                        <a href="https://www.youtube.com/@TeenInformatics-j7c" target="_blank"><i class="fab fa-youtube"></i></a>
+                        <a href="https://www.facebook.com/TeenInformaticsCode" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.tiktok.com/@teen.informatics" target="_blank"><i class="fab fa-tiktok"></i></a>
+                        <a href="https://wa.me/5219901182550" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                        <a href="https://www.instagram.com/teen_informatics?igsh=cWpvZ3RxOHN4NWNy" target="_blank"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                
+                <div class="col-lg-2 col-md-4">
+                    <h5 class="footer-title">Enlaces</h5>
+                    <ul class="footer-links p-0">
+                        <li><a href="index.html">Inicio</a></li>
+                        <li><a href="servicios.html">Servicios</a></li>
+                        <li><a href="tutoriales.html">Tutoriales</a></li>
+                        <li><a href="nosotros.html">Nosotros</a></li>
+                        <li><a href="contacto.html">Contacto</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-lg-2 col-md-4">
+                    <h5 class="footer-title">Categorías</h5>
+                    <ul class="footer-links p-0">
+                        <li><a href="#">Diseño Gráfico</a></li>
+                        <li><a href="#">Productividad</a></li>
+                        <li><a href="#">Programación</a></li>
+                        <li><a href="#">Inteligencia Artificial</a></li>
+                        <li><a href="#">Herramientas</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-lg-4 col-md-4">
+                    <h5 class="footer-title">Contacto</h5>
+                    <ul class="footer-links p-0">
+                        <li><i class="fas fa-map-marker-alt me-2"></i>Presente en el mundo digital</li>
+                        <li><i class="fas fa-phone me-2"></i> +52 990 118 2550</li>
+                        <li><i class="fas fa-envelope me-2"></i>teeninformatics@gmail.com</li>
+                        <li><i class="fas fa-clock me-2"></i> Lunes-Viernes: 9:00 - 5:00</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <hr class="mt-5 mb-4" style="border-color: #334155;">
+            
+            <div class="row">
+                <div class="col-md-6 mb-3 mb-md-0">
+                    <p class="mb-0">&copy; 2025 Teen Informatics. Todos los derechos reservados.</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <p class="mb-0">
+                        <a href="TerminosyCondiciones.html" class="text-white-50 me-3">Términos y Condiciones</a>
+                        <a href="PolíticadePrivacidad.html" class="text-white-50">Política de Privacidad</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 1000,
+            once: true
+        });
+        
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.style.padding = '10px 0';
+                navbar.style.boxShadow = '0 4px 15px rgba(0,0,0,0.1)';
+            } else {
+                navbar.style.padding = '15px 0';
+                navbar.style.boxShadow = '0 2px 10px rgba(0,0,0,0.1)';
+            }
+        });
+        
+        // Efecto hover para tarjetas de servicio
+        const serviceCards = document.querySelectorAll('.service-card');
+        serviceCards.forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-20px) scale(1.03)';
+                this.style.boxShadow = '0 25px 50px rgba(37, 99, 235, 0.3)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(-15px) scale(1.02)';
+                this.style.boxShadow = '0 20px 40px rgba(37, 99, 235, 0.2)';
+            });
+        });
+        
+        // Efecto para pestañas de servicios
+        const tabLinks = document.querySelectorAll('.nav-tabs .nav-link');
+        tabLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                tabLinks.forEach(l => l.classList.remove('active'));
+                this.classList.add('active');
+                
+                // Agregar pequeña animación
+                this.style.transform = 'scale(0.95)';
+                setTimeout(() => {
+                    this.style.transform = 'scale(1)';
+                }, 200);
+            });
+        });
+    </script>
+
+    <!-- Botón "Volver arriba" -->
+<div id="back-to-top" class="back-to-top">
+    <i class="fas fa-arrow-up"></i>
+</div>
+
+<style>
+    /* Estilos para el botón "Volver arriba" */
+    .back-to-top {
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+        width: 50px;
+        height: 50px;
+        background-color: #2563eb; /* Azul de tu paleta */
+        color: white;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease;
+        z-index: 999;
+    }
+    
+    .back-to-top i {
+        font-size: 20px;
+        transition: transform 0.3s ease;
+    }
+    
+    .back-to-top:hover {
+        background-color: #1e40af; /* Azul oscuro de tu paleta */
+        transform: translateY(-3px);
+        box-shadow: 0 5px 15px rgba(37, 99, 235, 0.4);
+    }
+    
+    .back-to-top:hover i {
+        transform: translateY(-3px);
+    }
+    
+    .back-to-top.active {
+        opacity: 1;
+        visibility: visible;
+    }
+    
+    /* Animación de pulso constante */
+    @keyframes pulse {
+        0% {
+            box-shadow: 0 0 0 0 rgba(37, 99, 235, 0.7);
+        }
+        70% {
+            box-shadow: 0 0 0 10px rgba(37, 99, 235, 0);
+        }
+        100% {
+            box-shadow: 0 0 0 0 rgba(37, 99, 235, 0);
+        }
+    }
+    
+    .back-to-top {
+        animation: pulse 2s infinite;
+    }
+</style>
+
+<script>
+    // Mostrar/ocultar botón al hacer scroll
+    window.addEventListener('scroll', function() {
+        var backToTop = document.getElementById('back-to-top');
+        if (window.pageYOffset > 300) {
+            backToTop.classList.add('active');
+        } else {
+            backToTop.classList.remove('active');
+        }
+    });
+    
+    // Desplazamiento suave al hacer clic
+    document.getElementById('back-to-top').addEventListener('click', function(e) {
+        e.preventDefault();
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
+</script>
+</body>
+</html>
