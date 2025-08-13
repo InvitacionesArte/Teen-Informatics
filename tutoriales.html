@@ -12,14 +12,12 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@700;800&display=swap" rel="stylesheet">
-     <!-- Bloquear traducción automática en Chrome/Edge -->
+    <!-- Bloquear traducción automática en Chrome/Edge -->
     <meta name="google" content="notranslate">
     <!-- Evitar que Firefox y otros navegadores traduzcan -->
     <meta name="robots" content="notranslate">
     <!-- Definir el idioma de la página (opcional, pero útil) -->
     <meta http-equiv="Content-Language" content="es">
-    <!-- También puedes usar esto para Safari y otros navegadores -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <style>
         :root {
             --primary: #2563eb;
@@ -465,7 +463,7 @@
     </section>
 
     <!-- Footer -->
-     <footer>
+    <footer>
         <div class="container">
             <div class="row g-5">
                 <div class="col-lg-4">
@@ -551,25 +549,27 @@
             }
         });
         
-        // Datos de los tutoriales (simulando una base de datos)
+        // Datos de los tutoriales con enlaces individuales
         const tutorials = [
             {
                 id: 1,
-                title: "Diseño Vectorial Avanzado",
-                category: "illustrator",
+                title: "Premiere Pro Desde Cero a Experto",
+                category: "premiere",
                 duration: "45 min",
-                description: "Domina las herramientas profesionales para crear ilustraciones y gráficos vectoriales escalables.",
+                description: "Domina Adobe Premiere Pro y crea proyectos de video profesionales, desde lo básico hasta técnicas avanzadas.",
                 rating: "4.9 (120)",
-                image: "https://picsum.photos/600/400?illustrator"
+                image: "img/Caratulas_Tutoriales/premire_01.jpg",
+                link: "PaginasTutoriales/premiere_1.html" // Enlace único
             },
             {
                 id: 2,
-                title: "Maquetación Profesional",
-                category: "indesign",
+                title: "Conecta GitHub Web y Desktop / VSCode",
+                category: "github",
                 duration: "1h 20min",
-                description: "Aprende a crear revistas, libros y folletos con estándares profesionales de diseño editorial.",
+                description: "Aprende a conectar GitHub Desktop con la web y domina los comandos Commit y Push usando Visual Studio Code paso a paso",
                 rating: "4.8 (95)",
-                image: "https://picsum.photos/600/400?indesign"
+                image: "img/Caratulas_Inicio/Github.jpg",
+                link: "PaginasTutoriales/github_1.html" // Enlace único
             },
             {
                 id: 3,
@@ -578,108 +578,141 @@
                 duration: "2h 15min",
                 description: "Técnicas avanzadas de edición, transiciones y efectos para crear videos impactantes.",
                 rating: "4.9 (156)",
-                image: "https://picsum.photos/600/400?premiere"
+                image: "img/Caratulas_Inicio/premiere_pro2.jpg",
+                link: "PaginasTutoriales/premiere_2.html" // Enlace único
             },
             {
                 id: 4,
-                title: "Fórmulas Avanzadas",
+                title: "Fórmulas Avanzadas de Excel",
                 category: "excel",
                 duration: "1h 5min",
                 description: "Domina VLOOKUP, INDEX-MATCH, tablas dinámicas y automatización con macros.",
                 rating: "4.7 (210)",
-                image: "https://picsum.photos/600/400?excel"
+                image: "img/Caratulas_Inicio/excel_avanzado.jpg",
+                link: "PaginasTutoriales/excel_1.html" // Enlace único
             },
-            {
-                id: 5,
-                title: "Documentos Profesionales",
-                category: "word",
-                duration: "35 min",
-                description: "Aprende a crear informes, tesis y documentos largos con estilos y automatizaciones.",
-                rating: "4.5 (87)",
-                image: "https://picsum.photos/600/400?word"
+             {
+                id: 1,
+                title: "Premiere Pro Desde Cero a Experto",
+                category: "premiere",
+                duration: "45 min",
+                description: "Domina Adobe Premiere Pro y crea proyectos de video profesionales, desde lo básico hasta técnicas avanzadas.",
+                rating: "4.9 (120)",
+                image: "img/Caratulas_Inicio/premire_pro1.jpg",
+                link: "PaginasTutoriales/premiere_1.html" // Enlace único
             },
-            {
-                id: 6,
-                title: "Bases de Datos Relacionales",
-                category: "access",
-                duration: "1h 30min",
-                description: "Diseña y gestiona bases de datos eficientes con formularios e informes personalizados.",
-                rating: "4.6 (64)",
-                image: "https://picsum.photos/600/400?database"
+             {
+                id: 1,
+                title: "Premiere Pro Desde Cero a Experto",
+                category: "premiere",
+                duration: "45 min",
+                description: "Domina Adobe Premiere Pro y crea proyectos de video profesionales, desde lo básico hasta técnicas avanzadas.",
+                rating: "4.9 (120)",
+                image: "img/Caratulas_Inicio/premire_pro1.jpg",
+                link: "PaginasTutoriales/premiere_1.html" // Enlace único
             },
-            {
-                id: 7,
-                title: "Colaboración con Git",
-                category: "github",
-                duration: "50 min",
-                description: "Flujo de trabajo profesional para equipos usando branches, pull requests y merge.",
-                rating: "4.9 (132)",
-                image: "https://picsum.photos/600/400?github"
+             {
+                id: 1,
+                title: "Premiere Pro Desde Cero a Experto",
+                category: "premiere",
+                duration: "45 min",
+                description: "Domina Adobe Premiere Pro y crea proyectos de video profesionales, desde lo básico hasta técnicas avanzadas.",
+                rating: "4.9 (120)",
+                image: "img/Caratulas_Inicio/premire_pro1.jpg",
+                link: "PaginasTutoriales/premiere_1.html" // Enlace único
             },
-            {
-                id: 8,
-                title: "Python para Principiantes",
-                category: "programacion",
-                duration: "3h 10min",
-                description: "Fundamentos de programación con Python: sintaxis, estructuras y proyectos prácticos.",
-                rating: "4.9 (320)",
-                image: "https://picsum.photos/600/400?programming"
+             {
+                id: 1,
+                title: "Premiere Pro Desde Cero a Experto",
+                category: "premiere",
+                duration: "45 min",
+                description: "Domina Adobe Premiere Pro y crea proyectos de video profesionales, desde lo básico hasta técnicas avanzadas.",
+                rating: "4.9 (120)",
+                image: "img/Caratulas_Inicio/premire_pro1.jpg",
+                link: "PaginasTutoriales/premiere_1.html" // Enlace único
             },
-            {
-                id: 9,
-                title: "Introducción a Machine Learning",
-                category: "ia",
-                duration: "2h 45min",
-                description: "Conceptos básicos de IA, algoritmos supervisados y no supervisados con Python.",
-                rating: "4.9 (278)",
-                image: "https://picsum.photos/600/400?ai"
+             {
+                id: 1,
+                title: "Premiere Pro Desde Cero a Experto",
+                category: "premiere",
+                duration: "45 min",
+                description: "Domina Adobe Premiere Pro y crea proyectos de video profesionales, desde lo básico hasta técnicas avanzadas.",
+                rating: "4.9 (120)",
+                image: "img/Caratulas_Inicio/premire_pro1.jpg",
+                link: "PaginasTutoriales/premiere_1.html" // Enlace único
             },
-            {
-                id: 10,
-                title: "Diseño de Logotipos",
-                category: "illustrator",
-                duration: "1h 15min",
-                description: "Proceso completo de creación de logos profesionales desde el boceto hasta el producto final.",
-                rating: "4.8 (92)",
-                image: "https://picsum.photos/600/400?logo-design"
+             {
+                id: 1,
+                title: "Premiere Pro Desde Cero a Experto",
+                category: "premiere",
+                duration: "45 min",
+                description: "Domina Adobe Premiere Pro y crea proyectos de video profesionales, desde lo básico hasta técnicas avanzadas.",
+                rating: "4.9 (120)",
+                image: "img/Caratulas_Inicio/premire_pro1.jpg",
+                link: "PaginasTutoriales/premiere_1.html" // Enlace único
             },
-            {
-                id: 11,
-                title: "Dashboards Interactivos",
-                category: "excel",
-                duration: "1h 50min",
-                description: "Crea paneles de control profesionales con gráficos dinámicos y segmentación de datos.",
-                rating: "4.9 (145)",
-                image: "https://picsum.photos/600/400?finance"
+             {
+                id: 1,
+                title: "Premiere Pro Desde Cero a Experto",
+                category: "premiere",
+                duration: "45 min",
+                description: "Domina Adobe Premiere Pro y crea proyectos de video profesionales, desde lo básico hasta técnicas avanzadas.",
+                rating: "4.9 (120)",
+                image: "img/Caratulas_Inicio/premire_pro1.jpg",
+                link: "PaginasTutoriales/premiere_1.html" // Enlace único
             },
-            {
-                id: 12,
-                title: "Desarrollo Web Completo",
-                category: "programacion",
-                duration: "4h 20min",
-                description: "HTML, CSS, JavaScript y React para construir aplicaciones web modernas y responsivas.",
-                rating: "4.9 (412)",
-                image: "https://picsum.photos/600/400?web-development"
+             {
+                id: 1,
+                title: "Premiere Pro Desde Cero a Experto",
+                category: "premiere",
+                duration: "45 min",
+                description: "Domina Adobe Premiere Pro y crea proyectos de video profesionales, desde lo básico hasta técnicas avanzadas.",
+                rating: "4.9 (120)",
+                image: "img/Caratulas_Inicio/premire_pro1.jpg",
+                link: "PaginasTutoriales/premiere_1.html" // Enlace único
             },
-            {
-    id: 13,
-    title: "Nuevo Tutorial de Ejemplo",
-    category: "programacion", // usa una de las categorías existentes
-    duration: "1h 30min",
-    description: "Descripción detallada del tutorial...",
-    rating: "4.8 (150)",
-    image: "https://picsum.photos/600/400?random"
-},
-{
-    id: 14,
-    title: "Nuevo Tutorial de Ejemplo",
-    category: "programacion", // usa una de las categorías existentes
-    duration: "1h 30min",
-    description: "Descripción detallada del tutorial...",
-    rating: "4.8 (150)",
-    image: "https://picsum.photos/600/400?random"
-},
-            // Puedes agregar más tutoriales aquí...
+             {
+                id: 1,
+                title: "Premiere Pro Desde Cero a Experto",
+                category: "premiere",
+                duration: "45 min",
+                description: "Domina Adobe Premiere Pro y crea proyectos de video profesionales, desde lo básico hasta técnicas avanzadas.",
+                rating: "4.9 (120)",
+                image: "img/Caratulas_Inicio/premire_pro1.jpg",
+                link: "PaginasTutoriales/premiere_1.html" // Enlace único
+            },
+             {
+                id: 1,
+                title: "Premiere Pro Desde Cero a Experto",
+                category: "premiere",
+                duration: "45 min",
+                description: "Domina Adobe Premiere Pro y crea proyectos de video profesionales, desde lo básico hasta técnicas avanzadas.",
+                rating: "4.9 (120)",
+                image: "img/Caratulas_Inicio/premire_pro1.jpg",
+                link: "PaginasTutoriales/premiere_1.html" // Enlace único
+            },
+             {
+                id: 1,
+                title: "Premiere Pro Desde Cero a Experto",
+                category: "premiere",
+                duration: "45 min",
+                description: "Domina Adobe Premiere Pro y crea proyectos de video profesionales, desde lo básico hasta técnicas avanzadas.",
+                rating: "4.9 (120)",
+                image: "img/Caratulas_Inicio/premire_pro1.jpg",
+                link: "PaginasTutoriales/premiere_1.html" // Enlace único
+            },
+             {
+                id: 1,
+                title: "Premiere Pro Desde Cero a Experto",
+                category: "premiere",
+                duration: "45 min",
+                description: "Domina Adobe Premiere Pro y crea proyectos de video profesionales, desde lo básico hasta técnicas avanzadas.",
+                rating: "4.9 (120)",
+                image: "img/Caratulas_Inicio/premire_pro1.jpg",
+                link: "PaginasTutoriales/premiere_1.html" // Enlace único
+            },
+            // Agrega aquí los demás tutoriales con sus enlaces únicos
+            // ...
         ];
 
         // Variables para la paginación
@@ -706,6 +739,7 @@
                 tutorialElement.className = 'col-md-6 col-lg-4 mb-4 tutorial-item visible';
                 tutorialElement.setAttribute('data-category', tutorial.category);
                 tutorialElement.setAttribute('data-title', tutorial.title.toLowerCase());
+                
                 tutorialElement.innerHTML = `
                     <div class="tutorial-card">
                         <span class="duration">${tutorial.duration}</span>
@@ -716,7 +750,7 @@
                             <p class="card-text">${tutorial.description}</p>
                             <div class="d-flex justify-content-between align-items-center">
                                 <span><i class="fas fa-star text-warning"></i> ${tutorial.rating}</span>
-                                <a href="#" class="btn btn-sm btn-outline-primary">Ver Tutorial</a>
+                                <a href="${tutorial.link}" class="btn btn-sm btn-outline-primary">Ver Tutorial</a>
                             </div>
                         </div>
                     </div>
@@ -724,7 +758,6 @@
                 container.appendChild(tutorialElement);
             });
             
-            // Configurar la paginación
             setupPagination(tutorialsToRender.length);
         }
 
@@ -826,7 +859,6 @@
                 document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
                 this.classList.add('active');
                 
-                // Agregar animación
                 this.style.transform = 'scale(0.95)';
                 setTimeout(() => {
                     this.style.transform = 'scale(1)';
@@ -843,89 +875,88 @@
     </script>
 
     <!-- Botón "Volver arriba" -->
-<div id="back-to-top" class="back-to-top">
-    <i class="fas fa-arrow-up"></i>
-</div>
+    <div id="back-to-top" class="back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </div>
 
-<style>
-    /* Estilos para el botón "Volver arriba" */
-    .back-to-top {
-        position: fixed;
-        bottom: 30px;
-        right: 30px;
-        width: 50px;
-        height: 50px;
-        background-color: #2563eb; /* Azul de tu paleta */
-        color: white;
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        cursor: pointer;
-        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-        opacity: 0;
-        visibility: hidden;
-        transition: all 0.3s ease;
-        z-index: 999;
-    }
-    
-    .back-to-top i {
-        font-size: 20px;
-        transition: transform 0.3s ease;
-    }
-    
-    .back-to-top:hover {
-        background-color: #1e40af; /* Azul oscuro de tu paleta */
-        transform: translateY(-3px);
-        box-shadow: 0 5px 15px rgba(37, 99, 235, 0.4);
-    }
-    
-    .back-to-top:hover i {
-        transform: translateY(-3px);
-    }
-    
-    .back-to-top.active {
-        opacity: 1;
-        visibility: visible;
-    }
-    
-    /* Animación de pulso constante */
-    @keyframes pulse {
-        0% {
-            box-shadow: 0 0 0 0 rgba(37, 99, 235, 0.7);
+    <style>
+        /* Estilos para el botón "Volver arriba" */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background-color: #2563eb;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 999;
         }
-        70% {
-            box-shadow: 0 0 0 10px rgba(37, 99, 235, 0);
+        
+        .back-to-top i {
+            font-size: 20px;
+            transition: transform 0.3s ease;
         }
-        100% {
-            box-shadow: 0 0 0 0 rgba(37, 99, 235, 0);
+        
+        .back-to-top:hover {
+            background-color: #1e40af;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(37, 99, 235, 0.4);
         }
-    }
-    
-    .back-to-top {
-        animation: pulse 2s infinite;
-    }
-</style>
+        
+        .back-to-top:hover i {
+            transform: translateY(-3px);
+        }
+        
+        .back-to-top.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(37, 99, 235, 0.7);
+            }
+            70% {
+                box-shadow: 0 0 0 10px rgba(37, 99, 235, 0);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(37, 99, 235, 0);
+            }
+        }
+        
+        .back-to-top {
+            animation: pulse 2s infinite;
+        }
+    </style>
 
-<script>
-    // Mostrar/ocultar botón al hacer scroll
-    window.addEventListener('scroll', function() {
-        var backToTop = document.getElementById('back-to-top');
-        if (window.pageYOffset > 300) {
-            backToTop.classList.add('active');
-        } else {
-            backToTop.classList.remove('active');
-        }
-    });
-    
-    // Desplazamiento suave al hacer clic
-    document.getElementById('back-to-top').addEventListener('click', function(e) {
-        e.preventDefault();
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth'
+    <script>
+        // Mostrar/ocultar botón al hacer scroll
+        window.addEventListener('scroll', function() {
+            var backToTop = document.getElementById('back-to-top');
+            if (window.pageYOffset > 300) {
+                backToTop.classList.add('active');
+            } else {
+                backToTop.classList.remove('active');
+            }
         });
-    });
-</script>
+        
+        // Desplazamiento suave al hacer clic
+        document.getElementById('back-to-top').addEventListener('click', function(e) {
+            e.preventDefault();
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    </script>
 </body>
 </html>
