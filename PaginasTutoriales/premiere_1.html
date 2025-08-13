@@ -335,6 +335,68 @@
             transform: translateY(-5px);
         }
         
+        /* Header con carrusel */
+.tutorials-header {
+    position: relative;
+    color: white;
+    padding: 120px 0 80px;
+    text-align: center;
+    margin-bottom: 60px;
+    overflow: hidden;
+}
+
+.header-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    z-index: -1;
+}
+
+.header-content {
+    position: relative;
+    z-index: 2;
+    color: white;
+    padding-top: 120px;
+}
+
+/* Efecto de transición suave entre imágenes */
+.carousel-item {
+    transition: transform 1.5s ease-in-out;
+}
+
+/* Ocultar controles e indicadores del carrusel */
+.carousel-control-prev,
+.carousel-control-next,
+.carousel-indicators {
+    display: none;
+}
+/* Overlay para mejor legibilidad */
+.tutorials-header::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    z-index: 1;
+}
+
+/* Ajustes responsivos */
+@media (max-width: 768px) {
+    .tutorials-header {
+        padding: 80px 0 50px;
+    }
+    
+    .tutorials-header h1 {
+        font-size: 2.5rem;
+    }
+}
+
         /* Responsive Adjustments */
         @media (max-width: 768px) {
             body {
@@ -389,13 +451,28 @@
         </div>
     </nav>
 
-    <!-- Header -->
-    <header class="tutorial-header" data-aos="fade-down">
-        <div class="container">
-            <h1 data-aos="fade-down">Python para Principiantes</h1>
-            <p class="lead" data-aos="fade-up" data-aos-delay="200">Aprende los fundamentos de programación con Python desde cero</p>
+<header class="tutorials-header">
+    <div id="headerCarousel" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <!-- Imagen 1 -->
+            <div class="carousel-item active">
+                <div class="header-background" style="background-image: url('./img/Caratulas_Inicio/carrusel_premiere/001.jpg');"></div>
+            </div>
+            <!-- Imagen 2 -->
+            <div class="carousel-item">
+                <div class="header-background" style="background-image: url('../img/Caratulas_Inicio/carrusel_premiere/002.jpg');"></div>
+            </div>
+            <!-- Imagen 3 -->
+            <div class="carousel-item">
+                <div class="header-background" style="background-image: url('../img/Caratulas_Inicio/carrusel_premiere/003.jpg');"></div>
+            </div>
         </div>
-    </header>
+    </div>
+    <div class="container header-content">
+        <h1 data-aos="fade-down">Premiere Pro: Primeros Pasos</h1>
+        <p class="lead" data-aos="fade-up" data-aos-delay="200">Aprende los fundamentos de edición de video en Premiere Pro desde cero</p>
+    </div>
+</header>
 
     <!-- Contenido del tutorial -->
     <section class="py-5">
@@ -403,17 +480,16 @@
             <!-- Selector de tamaño de video -->
             <div class="video-size-buttons" data-aos="fade-up">
                 <button class="video-size-btn active" id="normal-size">Tamaño Normal</button>
-                <button class="video-size-btn" id="large-size">Pantalla Completa</button>
+                <button class="video-size-btn" id="large-size">Pantalla Mediana</button>
             </div>
-            
-            <!-- Video de YouTube -->
-            <div class="row justify-content-center" data-aos="fade-up" data-aos-delay="200">
-                <div class="col-lg-10" id="video-container">
-                    <div class="video-container">
-                        <iframe src="https://www.youtube.com/watch?v=M_Ejmy1IEZM" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                    </div>
-                </div>
-            </div>
+           <!-- Video de YouTube -->
+<div class="row justify-content-center" data-aos="fade-up" data-aos-delay="200">
+    <div class="col-lg-10" id="video-container">
+        <div class="video-container">
+            <iframe src="https://www.youtube.com/embed/M_Ejmy1IEZM" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+    </div>
+</div>
             
             <!-- Contenido principal y panel de redes -->
             <div class="row">
@@ -421,31 +497,29 @@
                 <div class="col-lg-8" data-aos="fade-up" data-aos-delay="400">
                     <div class="tutorial-description">
                         <h3>Descripción del Tutorial</h3>
-                        <p>En este tutorial completo de Python para principiantes, aprenderás todo lo necesario para comenzar tu viaje en el mundo de la programación. Python es uno de los lenguajes más populares y versátiles en la actualidad, utilizado en campos como desarrollo web, ciencia de datos, inteligencia artificial y automatización.</p>
+                        <p>En este tutorial introductorio de Adobe Premiere Pro, aprenderás paso a paso todo lo esencial para dar tus primeros pasos en la edición de video profesional. Este curso está diseñado para que, incluso sin experiencia previa, puedas comenzar a trabajar de forma fluida en uno de los programas más utilizados en la industria audiovisual.</p>
                         
                         <hr class="section-divider">
                         
                         <h4>Lo que aprenderás:</h4>
                         <ul>
-                            <li>Fundamentos de programación con Python</li>
-                            <li>Sintaxis básica y estructuras de control</li>
-                            <li>Trabajo con listas, tuplas y diccionarios</li>
-                            <li>Creación y uso de funciones</li>
-                            <li>Manejo de archivos y excepciones</li>
-                            <li>Introducción a la programación orientada a objetos</li>
-                            <li>Proyectos prácticos para aplicar lo aprendido</li>
+                            <li>Cómo crear un proyecto nuevo desde cero</li>
+<li>Conocer y comprender la interfaz de Adobe Premiere Pro</li>
+<li>Personalizar el área de trabajo según tus necesidades</li>
+<li>Usar y entender el Panel de Proyecto para organizar tus medios</li>
+<li>Manejar la Línea de Tiempo para ensamblar y editar clips</li>
+<li>Utilizar el Panel de Programa para visualizar y revisar tu edición</li>
+<li>Trabajar con el Panel de Control de Efectos para aplicar y ajustar modificaciones a tus clips</li>
                         </ul>
                         
                         <hr class="section-divider">
                         
-                        <p>Al finalizar este curso, tendrás una base sólida en Python que te permitirá desarrollar tus propios scripts, automatizar tareas y continuar aprendiendo temas más avanzados. Cada sección incluye ejercicios prácticos y desafíos para reforzar tu aprendizaje.</p>
-                        
-                        <p>Python es conocido por su sintaxis clara y legible, lo que lo convierte en un lenguaje ideal para principiantes. Además, su gran comunidad y la abundancia de bibliotecas hacen que sea una herramienta poderosa para cualquier proyecto que quieras emprender.</p>
+                        <p>Al finalizar este tutorial, tendrás una comprensión clara de la estructura y herramientas básicas de Premiere Pro, lo que te permitirá comenzar tus propios proyectos de edición con confianza y sentar las bases para avanzar hacia técnicas más complejas. Cada sección incluye demostraciones prácticas para que puedas seguir los pasos y familiarizarte rápidamente con el software.</p>
                         
                         <hr class="section-divider">
                         
                         <h4>Requisitos:</h4>
-                        <p>No se requiere experiencia previa en programación. Solo necesitas una computadora con conexión a internet y muchas ganas de aprender. Instalaremos Python juntos durante el curso.</p>
+                        <p>No se necesita experiencia previa en edición de video. Solo requieres una computadora con Adobe Premiere Pro instalado, conexión a internet para seguir el tutorial y disposición para aprender.</p>
                     </div>
                 </div>
                 
