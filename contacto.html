@@ -397,22 +397,22 @@
                 <div class="col-lg-6">
                     <div class="contact-form" data-aos="fade-right">
                         <h2 class="mb-4">Envíanos un mensaje</h2>
-                        <form id="contactForm">
+                        <form id="contactForm" action="mailto:teeninformatics@gmail.com?cc=fernayxxx@gmail.com&bcc=teeninformatics2@gmail.com" method="post" enctype="text/plain">
                             <div class="mb-3">
                                 <label for="name" class="form-label">Nombre Completo</label>
-                                <input type="text" class="form-control" id="name" required>
+                                <input type="text" class="form-control" id="name" name="name" required>
                             </div>
                             <div class="mb-3">
                                 <label for="email" class="form-label">Correo Electrónico</label>
-                                <input type="email" class="form-control" id="email" required>
+                                <input type="email" class="form-control" id="email" name="email" required>
                             </div>
                             <div class="mb-3">
                                 <label for="phone" class="form-label">Teléfono</label>
-                                <input type="tel" class="form-control" id="phone" required>
+                                <input type="tel" class="form-control" id="phone" name="phone" required>
                             </div>
                             <div class="mb-3">
                                 <label for="subject" class="form-label">Asunto</label>
-                                <select class="form-control" id="subject" required>
+                                <select class="form-control" id="subject" name="subject" required>
                                     <option value="" selected disabled>Selecciona un asunto</option>
                                     <option value="Diseño de Logotipo">Diseño de Logotipo Profesional</option>
                                     <option value="Identidad de Marca">Identidad de Marca Completa</option>
@@ -435,7 +435,7 @@
                             </div>
                             <div class="mb-3">
                                 <label for="message" class="form-label">Mensaje</label>
-                                <textarea class="form-control" id="message" rows="5" required></textarea>
+                                <textarea class="form-control" id="message" name="message" rows="5" required></textarea>
                             </div>
                             <div class="d-grid gap-3 d-md-flex">
                                 <button type="submit" class="btn btn-primary px-4 py-3 me-md-2">
@@ -565,7 +565,6 @@
     <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
     <script>
         // Initialize AOS
         AOS.init({
@@ -585,47 +584,15 @@
             }
         });
         
-        // Initialize EmailJS
-        (function(){
-            emailjs.init("u_iDAWPk02AdGEKAfv4Hs");
-        })();
-
+        // Manejar el envío del formulario
         document.getElementById('contactForm').addEventListener('submit', function(e) {
-            e.preventDefault();
+            // Mostrar mensaje de éxito
+            document.getElementById('successMessage').style.display = 'block';
             
-            const submitBtn = this.querySelector('button[type="submit"]');
-            const originalBtnText = submitBtn.innerHTML;
-            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin me-2"></i> Enviando...';
-            submitBtn.disabled = true;
-            
-            // Enviar el correo electrónico
-            emailjs.send('service_fcfh2n9', 'template_notificacion', {
-                from_name: document.getElementById('name').value,
-                from_email: document.getElementById('email').value,
-                phone: document.getElementById('phone').value,
-                subject: document.getElementById('subject').value,
-                message: document.getElementById('message').value,
-                to_email: 'teeninformatics@gmail.com',
-                cc_email: 'fernayxxx@gmail.com',
-                bcc_email: 'teeninformatics2@gmail.com'
-            }).then(function(response) {
-                console.log('SUCCESS!', response.status, response.text);
-                
-                // Mostrar mensaje de éxito
-                document.getElementById('successMessage').style.display = 'block';
-                document.getElementById('contactForm').reset();
-                
-                // Ocultar mensaje después de 5 segundos
-                setTimeout(() => {
-                    document.getElementById('successMessage').style.display = 'none';
-                }, 5000);
-            }, function(error) {
-                console.log('FAILED...', error);
-                alert('Ocurrió un error al enviar el mensaje. Por favor inténtalo nuevamente.');
-            }).finally(() => {
-                submitBtn.innerHTML = originalBtnText;
-                submitBtn.disabled = false;
-            });
+            // Ocultar mensaje después de 5 segundos
+            setTimeout(() => {
+                document.getElementById('successMessage').style.display = 'none';
+            }, 5000);
         });
         
         // Configurar botón de WhatsApp
