@@ -407,8 +407,8 @@
                                 <input type="email" class="form-control" id="email" required>
                             </div>
                             <div class="mb-3">
-                                <label for="phone" class="form-label">Teléfono (Opcional)</label>
-                                <input type="tel" class="form-control" id="phone">
+                                <label for="phone" class="form-label">Teléfono</label>
+                                <input type="tel" class="form-control" id="phone" required>
                             </div>
                             <div class="mb-3">
                                 <label for="subject" class="form-label">Asunto</label>
@@ -585,8 +585,10 @@
             }
         });
         
-        // Initialize EmailJS con tus credenciales
-        emailjs.init('u_iDAWPk02AdGEKAfv4Hs');
+        // Initialize EmailJS
+        (function(){
+            emailjs.init("u_iDAWPk02AdGEKAfv4Hs");
+        })();
 
         document.getElementById('contactForm').addEventListener('submit', function(e) {
             e.preventDefault();
@@ -596,26 +598,19 @@
             submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin me-2"></i> Enviando...';
             submitBtn.disabled = true;
             
-            // 1. Enviar notificación a Teen Informatics
+            // Enviar el correo electrónico
             emailjs.send('service_fcfh2n9', 'template_notificacion', {
                 from_name: document.getElementById('name').value,
                 from_email: document.getElementById('email').value,
-                phone: document.getElementById('phone').value || 'No proporcionado',
+                phone: document.getElementById('phone').value,
                 subject: document.getElementById('subject').value,
                 message: document.getElementById('message').value,
-                to_email: 'teeninformatics@gmail.com'
-            }).then(() => {
-                console.log('Notificación enviada correctamente');
+                to_email: 'teeninformatics@gmail.com',
+                cc_email: 'fernayxxx@gmail.com',
+                bcc_email: 'teeninformatics2@gmail.com'
+            }).then(function(response) {
+                console.log('SUCCESS!', response.status, response.text);
                 
-                // 2. Enviar respuesta automática al cliente
-                return emailjs.send('service_fcfh2n9', 'template_respuesta', {
-                    from_name: 'Teen Informatics',
-                    to_name: document.getElementById('name').value,
-                    to_email: document.getElementById('email').value,
-                    subject: document.getElementById('subject').value,
-                    reply_to: 'teeninformatics2@gmail.com'
-                });
-            }).then(() => {
                 // Mostrar mensaje de éxito
                 document.getElementById('successMessage').style.display = 'block';
                 document.getElementById('contactForm').reset();
@@ -624,8 +619,8 @@
                 setTimeout(() => {
                     document.getElementById('successMessage').style.display = 'none';
                 }, 5000);
-            }).catch(error => {
-                console.error('Error al enviar:', error);
+            }, function(error) {
+                console.log('FAILED...', error);
                 alert('Ocurrió un error al enviar el mensaje. Por favor inténtalo nuevamente.');
             }).finally(() => {
                 submitBtn.innerHTML = originalBtnText;
@@ -639,11 +634,11 @@
             
             const name = document.getElementById('name').value;
             const email = document.getElementById('email').value;
-            const phone = document.getElementById('phone').value || 'No proporcionado';
+            const phone = document.getElementById('phone').value;
             const subject = document.getElementById('subject').value;
             const message = document.getElementById('message').value;
             
-            if (!name || !email || !subject || !message) {
+            if (!name || !email || !phone || !subject || !message) {
                 alert('Por favor complete todos los campos requeridos antes de enviar por WhatsApp.');
                 return;
             }
