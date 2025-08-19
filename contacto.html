@@ -397,7 +397,14 @@
                 <div class="col-lg-6">
                     <div class="contact-form" data-aos="fade-right">
                         <h2 class="mb-4">Envíanos un mensaje</h2>
-                        <form id="contactForm" action="mailto:teeninformatics@gmail.com?cc=fernayxxx@gmail.com&bcc=teeninformatics2@gmail.com" method="post" enctype="text/plain">
+                        <form id="contactForm" action="https://formsubmit.co/teeninformatics@gmail.com" method="POST">
+                            <input type="hidden" name="_cc" value="fernayxxx@gmail.com">
+                            <input type="hidden" name="_bcc" value="teeninformatics2@gmail.com">
+                            <input type="hidden" name="_subject" value="Nuevo mensaje de contacto">
+                            <input type="hidden" name="_autoresponse" value="Gracias por contactarnos. Hemos recibido tu mensaje y te responderemos pronto.">
+                            <input type="hidden" name="_template" value="table">
+                            <input type="hidden" name="_next" value="https://tudominio.com/gracias.html">
+                            
                             <div class="mb-3">
                                 <label for="name" class="form-label">Nombre Completo</label>
                                 <input type="text" class="form-control" id="name" name="name" required>
@@ -593,6 +600,8 @@
             setTimeout(() => {
                 document.getElementById('successMessage').style.display = 'none';
             }, 5000);
+            
+            // El formulario se enviará normalmente a FormSubmit
         });
         
         // Configurar botón de WhatsApp
