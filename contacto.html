@@ -4,6 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Teen Informatics - Contáctanos</title>
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="img/favicon-13.png">
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Teen Informatics ofrece servicios de diseño gráfico, desarrollo web, automatización y más. Contáctanos para aprender y crecer en el mundo digital.">
+    <meta name="keywords" content="Teen Informatics, diseño gráfico, desarrollo web, automatización, programación, tecnología, México">
+    <meta name="author" content="Teen Informatics">
     <!-- Bootstrap 5.3 -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Font Awesome -->
@@ -12,11 +18,11 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@700;800&display=swap" rel="stylesheet">
-     <!-- Bloquear traducción automática en Chrome/Edge -->
+    <!-- Bloquear traducción automática en Chrome/Edge -->
     <meta name="google" content="notranslate">
     <!-- Evitar que Firefox y otros navegadores traduzcan -->
     <meta name="robots" content="notranslate">
-    <!-- Definir el idioma de la página (opcional, pero útil) -->
+    <!-- Definir el idioma de la página -->
     <meta http-equiv="Content-Language" content="es">
     <!-- También puedes usar esto para Safari y otros navegadores -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
@@ -386,9 +392,7 @@
     <header class="contact-header">
         <div class="container">
             <h1 data-aos="fade-down">Contáctanos</h1>
-            <p class="lead" data-aos="fade-up" data-aos-delay="200">Estamos aquí para responder todas tus preguntas y ayudarte en tu camino de aprendizaje.
-                teen informaics
-            </p>
+            <p class="lead" data-aos="fade-up" data-aos-delay="200">Estamos aquí para responder todas tus preguntas y ayudarte en tu camino de aprendizaje</p>
         </div>
     </header>
 
@@ -399,6 +403,7 @@
                 <div class="col-lg-6">
                     <div class="contact-form" data-aos="fade-right">
                         <h2 class="mb-4">Envíanos un mensaje</h2>
+                        <h3 class="mb-4">Teen Informatics: Tu aliado en tecnología</h3>
                         <form id="contactForm">
                             <input type="hidden" name="_cc" value="fernayxxx@gmail.com">
                             <input type="hidden" name="_bcc" value="teeninformatics2@gmail.com">
@@ -449,7 +454,7 @@
                                 <button type="submit" class="btn btn-primary px-4 py-3 me-md-2">
                                     <i class="fas fa-paper-plane me-2"></i> Enviar Mensaje
                                 </button>
-                                <a href="#" id="whatsappBtn" class="btn btn-whatsapp px-4 py-3">
+                                <a href="https://wa.me/5219901182550?text=%C2%A1Hola!%20me%20gustar%C3%ADa%20cotizar%20un%20servicio." target="_blank" id="whatsappBtn" class="btn btn-whatsapp px-4 py-3">
                                     <i class="fab fa-whatsapp"></i> WhatsApp
                                 </a>
                             </div>
@@ -622,26 +627,6 @@
             .catch(error => {
                 alert('Error al enviar: ' + error);
             });
-        });
-        
-        // Configurar botón de WhatsApp
-        document.getElementById('whatsappBtn').addEventListener('click', function(e) {
-            e.preventDefault();
-            
-            const name = document.getElementById('name').value;
-            const email = document.getElementById('email').value;
-            const phone = document.getElementById('phone').value;
-            const subject = document.getElementById('subject').value;
-            const message = document.getElementById('message').value;
-            
-            if (!name || !email || !phone || !subject || !message) {
-                alert('Por favor complete todos los campos requeridos antes de enviar por WhatsApp.');
-                return;
-            }
-            
-            const whatsappMessage = `Hola Teen Informatics,\n\nMe gustaría contactarlos por:\n\n*Nombre:* ${name}\n*Correo:* ${email}\n*Teléfono:* ${phone}\n*Asunto:* ${subject}\n*Mensaje:* ${message}`;
-            const encodedMessage = encodeURIComponent(whatsappMessage);
-            window.open(`https://wa.me/5219901182550?text=${encodedMessage}`, '_blank');
         });
 
         // Efecto hover para botones
