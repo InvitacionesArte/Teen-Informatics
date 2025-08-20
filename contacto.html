@@ -397,13 +397,12 @@
                 <div class="col-lg-6">
                     <div class="contact-form" data-aos="fade-right">
                         <h2 class="mb-4">Envíanos un mensaje</h2>
-                        <form id="contactForm" action="https://formsubmit.co/teeninformatics@gmail.com" method="POST">
+                        <form id="contactForm">
                             <input type="hidden" name="_cc" value="fernayxxx@gmail.com">
                             <input type="hidden" name="_bcc" value="teeninformatics2@gmail.com">
                             <input type="hidden" name="_subject" value="Nuevo mensaje de contacto">
                             <input type="hidden" name="_autoresponse" value="Gracias por contactarnos. Hemos recibido tu mensaje y te responderemos pronto.">
                             <input type="hidden" name="_template" value="table">
-                            <input type="hidden" name="_next" value="https://tudominio.com/gracias.html">
                             
                             <div class="mb-3">
                                 <label for="name" class="form-label">Nombre Completo</label>
@@ -591,17 +590,36 @@
             }
         });
         
-        // Manejar el envío del formulario
+        // Manejar el envío del formulario con AJAX
         document.getElementById('contactForm').addEventListener('submit', function(e) {
-            // Mostrar mensaje de éxito
-            document.getElementById('successMessage').style.display = 'block';
+            e.preventDefault(); // Prevenir el envío normal y redirección
             
-            // Ocultar mensaje después de 5 segundos
-            setTimeout(() => {
-                document.getElementById('successMessage').style.display = 'none';
-            }, 5000);
+            const formData = new FormData(this);
             
-            // El formulario se enviará normalmente a FormSubmit
+            fetch('https://formsubmit.co/ajax/teeninformatics@gmail.com', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success === 'true') {
+                    // Mostrar mensaje de éxito
+                    document.getElementById('successMessage').style.display = 'block';
+                    
+                    // Ocultar mensaje después de 5 segundos
+                    setTimeout(() => {
+                        document.getElementById('successMessage').style.display = 'none';
+                    }, 5000);
+                    
+                    // Resetear el formulario
+                    this.reset();
+                } else {
+                    alert('Error al enviar: ' + data.message);
+                }
+            })
+            .catch(error => {
+                alert('Error al enviar: ' + error);
+            });
         });
         
         // Configurar botón de WhatsApp
