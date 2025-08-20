@@ -2,8 +2,14 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Teen Informatics - Detalle de Tutorial</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Tutorial GitHub Desktop y Web - Teen Informatics</title>
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="../img/favicon-14.png">
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Aprende con Teen Informatics a conectar GitHub Desktop con GitHub Web y usar Visual Studio Code para gestionar proyectos. Tutorial paso a paso para principiantes.">
+    <meta name="keywords" content="Teen Informatics, GitHub tutorial, GitHub Desktop, Visual Studio Code, programación, control de versiones, México">
+    <meta name="author" content="Teen Informatics">
     <!-- Bootstrap 5.3 -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Font Awesome -->
@@ -12,14 +18,12 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@700;800&display=swap" rel="stylesheet">
-     <!-- Bloquear traducción automática en Chrome/Edge -->
+    <!-- Bloquear traducción automática en Chrome/Edge -->
     <meta name="google" content="notranslate">
     <!-- Evitar que Firefox y otros navegadores traduzcan -->
     <meta name="robots" content="notranslate">
-    <!-- Definir el idioma de la página (opcional, pero útil) -->
+    <!-- Definir el idioma de la página -->
     <meta http-equiv="Content-Language" content="es">
-    <!-- También puedes usar esto para Safari y otros navegadores -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <style>
         :root {
             --primary: #2563eb;
@@ -95,7 +99,7 @@
             box-shadow: 0 5px 15px rgba(37, 99, 235, 0.4);
         }
         
-        /* Header con imagen de fondo - ESTILOS CORREGIDOS */
+        /* Header con imagen de fondo */
         .tutorial-header {
             position: relative;
             color: white;
@@ -103,7 +107,7 @@
             text-align: center;
             margin-bottom: 60px;
             height: 500px;
-            background: #000; /* Fondo de respaldo */
+            background: #000;
         }
 
         #headerCarousel {
@@ -141,7 +145,6 @@
             justify-content: center;
         }
 
-        /* Overlay más transparente */
         .header-background::after {
             content: '';
             position: absolute;
@@ -161,7 +164,7 @@
         /* Video container */
         .video-container {
             position: relative;
-            padding-bottom: 56.25%; /* 16:9 */
+            padding-bottom: 56.25%;
             height: 0;
             overflow: hidden;
             margin-bottom: 30px;
@@ -250,80 +253,80 @@
             margin: 40px 0;
         }
         
-       /* Panel de redes sociales */
-.social-panel {
-    background: rgba(248, 250, 252, 0.8);
-    border-radius: 12px;
-    padding: 25px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-    margin-bottom: 30px;
-    border: 1px solid rgba(37, 99, 235, 0.1);
-}
+        /* Panel de redes sociales */
+        .social-panel {
+            background: rgba(248, 250, 252, 0.8);
+            border-radius: 12px;
+            padding: 25px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            margin-bottom: 30px;
+            border: 1px solid rgba(37, 99, 235, 0.1);
+        }
 
-.social-panel h4 {
-    color: var(--primary);
-    margin-bottom: 20px;
-    text-align: center;
-}
+        .social-panel h4 {
+            color: var(--primary);
+            margin-bottom: 20px;
+            text-align: center;
+        }
 
-.social-panel .social-links {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-}
+        .social-panel .social-links {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
 
-.social-panel .social-link {
-    display: flex;
-    align-items: center;
-    padding: 10px 15px;
-    border-radius: 8px;
-    color: var(--dark);
-    text-decoration: none;
-    transition: all 0.3s;
-    border: 1px solid rgba(37, 99, 235, 0.2);
-}
+        .social-panel .social-link {
+            display: flex;
+            align-items: center;
+            padding: 10px 15px;
+            border-radius: 8px;
+            color: var(--dark);
+            text-decoration: none;
+            transition: all 0.3s;
+            border: 1px solid rgba(37, 99, 235, 0.2);
+        }
 
-.social-panel .social-link:hover {
-    background: rgba(37, 99, 235, 0.1);
-    transform: translateX(5px);
-    border-color: var(--primary);
-}
+        .social-panel .social-link:hover {
+            background: rgba(37, 99, 235, 0.1);
+            transform: translateX(5px);
+            border-color: var(--primary);
+        }
 
-.social-panel .social-link i {
-    font-size: 16px; /* Tamaño fijo para los íconos */
-    width: 30px;
-    height: 30px;
-    background: var(--primary);
-    color: white;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-right: 15px;
-    flex-shrink: 0; /* Evita que se deformen */
-}
+        .social-panel .social-link i {
+            font-size: 16px;
+            width: 30px;
+            height: 30px;
+            background: var(--primary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            flex-shrink: 0;
+        }
 
-.youtube-subscribe {
-    background: linear-gradient(135deg, #FF0000, #CC0000);
-    color: white;
-    border: none;
-    padding: 12px 20px;
-    border-radius: 8px;
-    font-weight: 600;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    width: 100%;
-    margin-top: 20px;
-    transition: all 0.3s;
-}
+        .youtube-subscribe {
+            background: linear-gradient(135deg, #FF0000, #CC0000);
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 8px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            width: 100%;
+            margin-top: 20px;
+            transition: all 0.3s;
+        }
 
-.youtube-subscribe:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 5px 15px rgba(255, 0, 0, 0.3);
-    color: white;
-}
+        .youtube-subscribe:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(255, 0, 0, 0.3);
+            color: white;
+        }
         
         /* Footer */
         footer {
@@ -419,7 +422,7 @@
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-light fixed-top">
         <div class="container">
-            <a class="navbar-brand" href="index.html">Teen Informatics</a>
+            <a class="navbar-brand" href="../index.html">Teen Informatics</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -448,35 +451,30 @@
         </div>
     </nav>
 
-    <!-- Header con carrusel - VERSIÓN CORREGIDA -->
+    <!-- Header con carrusel -->
     <header class="tutorial-header">
         <div id="headerCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
             <div class="carousel-inner">
-                <!-- Imagen 1 - Ejemplo funcional -->
                 <div class="carousel-item active">
                     <div class="header-background" style="background-image: url('../img/Caratulas/carruselpremiere/004.jpg');"></div>
                 </div>
-                <!-- Imagen 2 - Tu imagen local -->
                 <div class="carousel-item">
                     <div class="header-background" style="background-image: url('../img/Caratulas/carruselpremiere/005.jpg');"></div>
                 </div>
-                <!-- Imagen 3 - Tu imagen local -->
                 <div class="carousel-item">
                     <div class="header-background" style="background-image: url('../img/Caratulas/carruselpremiere/006.jpg');"></div>
                 </div>
-                <!-- Imagen 4 - Tu imagen local -->
                 <div class="carousel-item">
                     <div class="header-background" style="background-image: url('../img/Caratulas/carruselpremiere/007.jpg');"></div>
                 </div>
-                 <!-- Imagen 5 - Tu imagen local -->
                 <div class="carousel-item">
                     <div class="header-background" style="background-image: url('../img/Caratulas/carruselpremiere/008.jpg');"></div>
                 </div>
             </div>
         </div>
         <div class="container header-content">
-            <h1 data-aos="fade-down">GitHub Desktop y Web: Conexión Paso a Paso</h1>
-            <p class="lead" data-aos="fade-up" data-aos-delay="200">Aprende a conectar GitHub Desktop con GitHub Web y usar Visual Studio Code para gestionar y sincronizar tus proyectos fácilmente.</p>
+            <h1 data-aos="fade-down">Tutorial GitHub Desktop y Web de Teen Informatics</h1>
+            <p class="lead" data-aos="fade-up" data-aos-delay="200">Aprende con Teen Informatics a conectar GitHub Desktop con GitHub Web y usar Visual Studio Code para gestionar y sincronizar tus proyectos de programación.</p>
         </div>
     </header>
 
@@ -488,23 +486,22 @@
                 <button class="video-size-btn active" id="normal-size">Pantalla Normal</button>
                 <button class="video-size-btn" id="large-size">Pantalla Mediana</button>
             </div>
-           <!-- Video de YouTube -->
-<div class="row justify-content-center" data-aos="fade-up" data-aos-delay="200">
-    <div class="col-lg-10" id="video-container">
-        <div class="video-container">
-            <iframe src="https://www.youtube.com/embed/rY6JzcJSdr8?start=19" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
-        </div>
-    </div>
-</div>
+            <!-- Video de YouTube -->
+            <div class="row justify-content-center" data-aos="fade-up" data-aos-delay="200">
+                <div class="col-lg-10" id="video-container">
+                    <div class="video-container">
+                        <iframe src="https://www.youtube.com/embed/rY6JzcJSdr8?start=19" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
             
-                       <!-- Botones de navegación entre tutoriales - Versión mejorada -->
+            <!-- Botones de navegación entre tutoriales -->
             <div class="row mt-4 mb-5 justify-content-center">
-                <!--<div class="col-auto me-2">
-                    <a class="btn btn-outline-primary px-4">
+                <div class="col-auto me-2">
+                    <a href="premiere_1.html" class="btn btn-outline-primary px-4">
                         <i class="fas fa-arrow-left me-2"></i> Tutorial Anterior
                     </a>
-                </div>-->
+                </div>
                 <div class="col-auto">
                     <a href="tutorial-siguiente.html" class="btn btn-outline-primary px-4">
                         Siguiente Tutorial <i class="fas fa-arrow-right ms-2"></i>
@@ -518,63 +515,63 @@
                 <div class="col-lg-8" data-aos="fade-up" data-aos-delay="400">
                     <div class="tutorial-description">
                         <h3>Descripción del Tutorial</h3>
-                        <p>En este tutorial práctico aprenderás paso a paso cómo conectar GitHub Desktop con la versión web de GitHub y trabajar de forma fluida con Visual Studio Code. Está pensado para que, incluso sin experiencia previa, puedas comenzar a gestionar y sincronizar tus proyectos de programación con facilidad.</p>
+                        <p>En este tutorial de Teen Informatics aprenderás paso a paso cómo conectar GitHub Desktop con la versión web de GitHub y trabajar de forma fluida con Visual Studio Code. Está diseñado para que, incluso sin experiencia previa, puedas comenzar a gestionar y sincronizar tus proyectos de programación con facilidad.</p>
                         
                         <hr class="section-divider">
                         
                         <h4>Lo que aprenderás:</h4>
                         <ul>
-                            <li>Instalar y configurar GitHub Desktop.</li>
-<li>Conectar tu cuenta con GitHub Web.</li>
-<li>Crear un repositorio local y vincularlo con uno en línea.</li>
-<li>Hacer cambios en tus archivos usando Visual Studio Code.</li>
-<li>Realizar Commit y Push para subir tu trabajo a la nube.</li>
-<li>Sincronizar tu proyecto entre la computadora y GitHub Web</li>
+                            <li>Instalar y configurar GitHub Desktop con Teen Informatics.</li>
+                            <li>Conectar tu cuenta con GitHub Web.</li>
+                            <li>Crear un repositorio local y vincularlo con uno en línea.</li>
+                            <li>Hacer cambios en tus archivos usando Visual Studio Code.</li>
+                            <li>Realizar Commit y Push para subir tu trabajo a la nube.</li>
+                            <li>Sincronizar tu proyecto entre la computadora y GitHub Web.</li>
                         </ul>
                         
                         <hr class="section-divider">
                         
-                        <p>Al finalizar este tutorial, tendrás el conocimiento necesario para gestionar tus proyectos desde tu computadora, integrando GitHub Desktop, GitHub Web y Visual Studio Code, lo que te permitirá colaborar, respaldar y compartir tu código de manera profesional.</p>
+                        <p>Al finalizar este tutorial de Teen Informatics, tendrás el conocimiento necesario para gestionar tus proyectos desde tu computadora, integrando GitHub Desktop, GitHub Web, y Visual Studio Code, lo que te permitirá colaborar, respaldar y compartir tu código de manera profesional.</p>
                         
                         <hr class="section-divider">
                         
                         <h4>Requisitos:</h4>
-                        <p>No necesitas experiencia previa en control de versiones. Solo requieres tener instalada la última versión de GitHub Desktop y Visual Studio Code, una cuenta en GitHub y conexión a internet para seguir el tutorial.</p>
+                        <p>No necesitas experiencia previa en control de versiones. Solo requieres tener instalada la última versión de GitHub Desktop y Visual Studio Code, una cuenta en GitHub, y conexión a internet para seguir este tutorial de Teen Informatics.</p>
                     </div>
                 </div>
                 
-               <!-- Panel de redes sociales -->
-<div class="col-lg-4" data-aos="fade-left" data-aos-delay="600">
-    <div class="social-panel sticky-top" style="top: 100px;">
-        <h4>Síguenos en nuestras redes</h4>
-        <div class="social-links">
-            <a href="https://www.youtube.com/@TeenInformatics-j7c" target="_blank" class="social-link">
-                <i class="fab fa-youtube"></i>
-                <span>YouTube</span>
-            </a>
-            <a href="https://www.facebook.com/TeenInformaticsCode" target="_blank" class="social-link">
-                <i class="fab fa-facebook-f"></i>
-                <span>Facebook</span>
-            </a>
-            <a href="https://www.tiktok.com/@teen.informatics" target="_blank" class="social-link">
-                <i class="fab fa-tiktok"></i>
-                <span>TikTok</span>
-            </a>
-            <a href="https://wa.me/5219901182550" target="_blank" class="social-link">
-                <i class="fab fa-whatsapp"></i>
-                <span>WhatsApp</span>
-            </a>
-            <a href="https://www.instagram.com/teen_informatics?igsh=cWpvZ3RxOHN4NWNy" target="_blank" class="social-link">
-                <i class="fab fa-instagram"></i>
-                <span>Instagram</span>
-            </a>
-        </div>
-        <button class="youtube-subscribe" onclick="window.open('https://www.youtube.com/@TeenInformatics-j7c?sub_confirmation=1', '_blank')">
-            <i class="fab fa-youtube"></i>
-            Suscribirse
-        </button>
-    </div>
-</div>
+                <!-- Panel de redes sociales -->
+                <div class="col-lg-4" data-aos="fade-left" data-aos-delay="600">
+                    <div class="social-panel sticky-top" style="top: 100px;">
+                        <h4>Síguenos en Teen Informatics</h4>
+                        <div class="social-links">
+                            <a href="https://www.youtube.com/@TeenInformatics-j7c" target="_blank" class="social-link">
+                                <i class="fab fa-youtube"></i>
+                                <span>YouTube</span>
+                            </a>
+                            <a href="https://www.facebook.com/TeenInformaticsCode" target="_blank" class="social-link">
+                                <i class="fab fa-facebook-f"></i>
+                                <span>Facebook</span>
+                            </a>
+                            <a href="https://www.tiktok.com/@teen.informatics" target="_blank" class="social-link">
+                                <i class="fab fa-tiktok"></i>
+                                <span>TikTok</span>
+                            </a>
+                            <a href="https://wa.me/5219901182550?text=%C2%A1Hola!%20me%20gustar%C3%ADa%20cotizar%20un%20servicio." target="_blank" class="social-link">
+                                <i class="fab fa-whatsapp"></i>
+                                <span>WhatsApp</span>
+                            </a>
+                            <a href="https://www.instagram.com/teen_informatics?igsh=cWpvZ3RxOHN4NWNy" target="_blank" class="social-link">
+                                <i class="fab fa-instagram"></i>
+                                <span>Instagram</span>
+                            </a>
+                        </div>
+                        <button class="youtube-subscribe" onclick="window.open('https://www.youtube.com/@TeenInformatics-j7c?sub_confirmation=1', '_blank')">
+                            <i class="fab fa-youtube"></i>
+                            Suscribirse
+                        </button>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -590,7 +587,7 @@
                         <a href="https://www.youtube.com/@TeenInformatics-j7c" target="_blank"><i class="fab fa-youtube"></i></a>
                         <a href="https://www.facebook.com/TeenInformaticsCode" target="_blank"><i class="fab fa-facebook-f"></i></a>
                         <a href="https://www.tiktok.com/@teen.informatics" target="_blank"><i class="fab fa-tiktok"></i></a>
-                        <a href="https://wa.me/5219901182550" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                        <a href="https://wa.me/5219901182550?text=%C2%A1Hola!%20me%20gustar%C3%ADa%20cotizar%20un%20servicio." target="_blank"><i class="fab fa-whatsapp"></i></a>
                         <a href="https://www.instagram.com/teen_informatics?igsh=cWpvZ3RxOHN4NWNy" target="_blank"><i class="fab fa-instagram"></i></a>
                     </div>
                 </div>
@@ -598,11 +595,11 @@
                 <div class="col-lg-2 col-md-4">
                     <h5 class="footer-title">Enlaces</h5>
                     <ul class="footer-links p-0">
-                        <li><a href="index.html">Inicio</a></li>
-                        <li><a href="servicios.html">Servicios</a></li>
-                        <li><a href="tutoriales.html">Tutoriales</a></li>
-                        <li><a href="nosotros.html">Nosotros</a></li>
-                        <li><a href="contacto.html">Contacto</a></li>
+                        <li><a href="../index.html">Inicio</a></li>
+                        <li><a href="../servicios.html">Servicios</a></li>
+                        <li><a href="../tutoriales.html">Tutoriales</a></li>
+                        <li><a href="../nosotros.html">Nosotros</a></li>
+                        <li><a href="../contacto.html">Contacto</a></li>
                     </ul>
                 </div>
                 
@@ -636,8 +633,8 @@
                 </div>
                 <div class="col-md-6 text-md-end">
                     <p class="mb-0">
-                        <a href="TerminosyCondiciones.html" class="text-white-50 me-3">Términos y Condiciones</a>
-                        <a href="PolíticadePrivacidad.html" class="text-white-50">Política de Privacidad</a>
+                        <a href="../TerminosyCondiciones.html" class="text-white-50 me-3">Términos y Condiciones</a>
+                        <a href="../PolíticadePrivacidad.html" class="text-white-50">Política de Privacidad</a>
                     </p>
                 </div>
             </div>
@@ -683,7 +680,7 @@
         document.addEventListener('DOMContentLoaded', function() {
             var myCarousel = document.getElementById('headerCarousel');
             var carousel = new bootstrap.Carousel(myCarousel, {
-                interval: 5000, // Cambia cada 5 segundos
+                interval: 5000,
                 wrap: true,
                 pause: false
             });
@@ -701,7 +698,7 @@
                 
                 testImg.onerror = function() {
                     console.error('Error al cargar imagen:', bgUrl);
-                    img.style.backgroundColor = '#ff0000'; // Rojo para error
+                    img.style.backgroundColor = '#ff0000';
                     img.innerHTML = '<div style="color:white;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);">Error cargando: '+bgUrl+'</div>';
                 };
             });
@@ -714,7 +711,6 @@
     </div>
 
     <style>
-        /* Estilos para el botón "Volver arriba" */
         .back-to-top {
             position: fixed;
             bottom: 30px;
@@ -755,7 +751,6 @@
             visibility: visible;
         }
         
-        /* Animación de pulso constante */
         @keyframes pulse {
             0% {
                 box-shadow: 0 0 0 0 rgba(37, 99, 235, 0.7);
